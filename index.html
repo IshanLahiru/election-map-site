@@ -248,6 +248,7 @@
     <div id="app"></div>
 
     <script>
+        let divisionArray = new Array(0);
 
         let theName = "John Doe";
         // Main Content Component
@@ -289,7 +290,6 @@
             `;
         }
 
-        // Sidebar Component
         function createSidebar() {
             return `
                 <div class="sidebar">
@@ -303,90 +303,18 @@
                 seats: 3,
                 iconUrl: 'party-icon-url'
             })}
-                    ${theSidebarCard({
-                name: 'SLPP',
-                voteCount: 6853693,
-                percentage: 55.09,
-                seats: 3,
-                iconUrl: 'party-icon-url'
-            })}
-                    ${theSidebarCard({
-                name: 'SLPP',
-                voteCount: 6853693,
-                percentage: 19.09,
-                seats: 3,
-                iconUrl: 'party-icon-url'
-            })}
-                    ${theSidebarCard({
-                name: 'SLPP',
-                voteCount: 6853693,
-                percentage: 19.09,
-                seats: 3,
-                iconUrl: 'party-icon-url'
-            })}
-                    ${theSidebarCard({
-                name: 'SLPP',
-                voteCount: 6853693,
-                percentage: 19.09,
-                seats: 3,
-                iconUrl: 'party-icon-url'
-            })}
-                    ${theSidebarCard({
-                name: 'SLPP',
-                voteCount: 6853693,
-                percentage: 19.09,
-                seats: 3,
-                iconUrl: 'party-icon-url'
-            })}
-                    ${theSidebarCard({
-                name: 'SLPP',
-                voteCount: 6853693,
-                percentage: 19.09,
-                seats: 3,
-                iconUrl: 'party-icon-url'
-            })}
-                    ${theSidebarCard({
-                name: 'SLPP',
-                voteCount: 6853693,
-                percentage: 19.09,
-                seats: 3,
-                iconUrl: 'party-icon-url'
-            })}
-                    ${theSidebarCard({
-                name: 'SLPP',
-                voteCount: 6853693,
-                percentage: 19.09,
-                seats: 3,
-                iconUrl: 'party-icon-url'
-            })}
-                    ${theSidebarCard({
-                name: 'SLPP',
-                voteCount: 6853693,
-                percentage: 19.09,
-                seats: 3,
-                iconUrl: 'party-icon-url'
-            })}
                 </div>
             `;
         }
 
-        // Bottom Section Component
         function createBottomSection() {
             return `
                 <div class="bottom-section">
                     ${createDistrictCard('Hambantota District', parties)}
-                    ${createDistrictCard('Hambantota District', parties)}
-                    ${createDistrictCard('Hambantota District', parties)}
-                    ${createDistrictCard('Hambantota District', parties)}
-                    ${createDistrictCard('Hambantota District', parties)}
-                    ${createDistrictCard('Hambantota District', parties)}
                 </div>
             `;
         }
 
-
-
-        // Combine Components into Layout
         function createLayout() {
             return `
                 <div id="container">
@@ -425,7 +353,7 @@
                 </div>
             `;
         }
-        // Example usage:
+
         const parties = [
             { name: 'SLPP', voteCount: 280881, percentage: 75.10, color: '#b71c1c', iconUrl: 'slpp-icon-url' },
             { name: 'SJB', voteCount: 51758, percentage: 13.84, color: '#8bc34a', iconUrl: 'sjb-icon-url' },
@@ -460,174 +388,19 @@
             }
         }
 
-        const provinceMap = {
-            "division-1": "Colombo-North",
-            "division-2": "Colombo-central",
-            "division-3": "Boralla",
-            "division-4": "Colombo-East",
-            "division-5": "Colombo-central",
-            "division-6": "Dehiwala",
-            "division-7": "Ratmalana",
-            "division-8": "Kolonnawa",
-            "division-9": "Kotte",
-            "division-10": "Kaduwela",
-            "division-11": "Avissawella",
-            "division-12": "Homgama",
-            "division-13": "Maharagama",
-            "division-14": "Kesbewa",
-            "division-15": "Moratuwa",
-            "division-16": "Wattala",
-            "division-17": "Negambo",
-            "division-18": "Katana",
-            "division-19": "Divulapitiya",
-            "division-20": "Mirigama",
-            "division-21": "Minuwangoda",
-            "division-22": "Attanagalla",
-            "division-23": "Gampaha",
-            "division-24": "Ja-Ela",
-            "division-25": "Mahara",
-            "division-26": "Dompe",
-            "division-27": "Biyagama",
-            "division-28": "Kelaniya",
-            "division-29": "Panadura",
-            "division-30": "Bandaragama",
-            "division-31": "Horana",
-            "division-32": "Bulathsinhala",
-            "division-33": "Matugama",
-            "division-34": "Kaluthara",
-            "division-35": "Beruwala",
-            "division-36": "Agalawatta",
-            "division-37": "Galagedara",
-            "division-38": "Harispattuwa",
-            "division-39": "Patha-Dumbara",
-            "division-40": "Udu-Dumbara",
-            "division-41": "Teldeniya",
-            "division-42": "Kundasale",
-            "division-43": "Hewaheta",
-            "division-44": "Senkadagala",
-            "division-45": "Mahanuwara",
-            "division-46": "Yatinuwara",
-            "division-47": "Udunuwara",
-            "division-48": "Gampola",
-            "division-49": "Nawalapitiya",
-            "division-50": "Dambulla",
-            "division-51": "Laggala",
-            "division-52": "Matale",
-            "division-53": "Rattota",
-            "division-54": "Neliya-Maskeliya",
-            "division-55": "Kotmale",
-            "division-56": "Hanguranketha",
-            "division-57": "Walapane",
-            "division-58": "Balapitiya",
-            "division-59": "Ambalangoda",
-            "division-60": "Karandeniya",
-            "division-61": "Bentara-Elpitiya",
-            "division-62": "Hiniduma",
-            "division-63": "Baddegama",
-            "division-64": "Ratagama",
-            "division-65": "Galle",
-            "division-66": "Akmeemana",
-            "division-67": "Habaraduwa",
-            "division-68": "Deniyaya",
-            "division-69": "Hakmana",
-            "division-70": "Akuressa",
-            "division-71": "Kamburupitiya",
-            "division-72": "Devinuwara",
-            "division-73": "Matara",
-            "division-74": "Weligama",
-            "division-75": "Mulkirigala",
-            "division-76": "Beliatta",
-            "division-77": "Tangalle",
-            "division-78": "Tissamaharamaya",
-            "division-79": "Kayts",
-            "division-80": "Vaddukkoddai",
-            "division-81": "kankasanthurai",
-            "division-82": "Manipay",
-            "division-83": "Kopay",
-            "division-84": "Udupiddy",
-            "division-85": "Point Pedro",
-            "division-86": "Chavakachcheri",
-            "division-87": "Nallur",
-            "division-88": "Jaffna",
-            "division-89": "Kilinochchi",
-            "division-90": "Mannar",
-            "division-91": "Vavuniya",
-            "division-92": "Mullaitivu",
-            "division-93": "Kalkudah",
-            "division-94": "Batticaloa",
-            "division-95": "Padiruppu",
-            "division-96": "Ampara",
-            "division-97": "Sammanturai",
-            "division-98": "Kalmunai",
-            "division-99": "Potuvil",
-            "division-100": "Seruwila",
-            "division-101": "Trincomalee",
-            "division-102": "Mutur",
-            "division-103": "Galgamuwa",
-            "division-104": "Nikaweratiya",
-            "division-105": "Yapahwa",
-            "division-106": "Hiriyala",
-            "division-107": "Wariyapola",
-            "division-108": "Panduwasnuwara",
-            "division-109": "Bingiriya",
-            "division-110": "Katugampola",
-            "division-111": "Kuliyapitiya",
-            "division-112": "Dambadeniya",
-            "division-113": "Polgahawela",
-            "division-114": "Kurunegala",
-            "division-115": "Mawathagama",
-            "division-116": "Dodangaslanda",
-            "division-117": "Puththalama",
-            "division-118": "Anamaduwa",
-            "division-119": "Chillaw",
-            "division-120": "Nattandiya",
-            "division-121": "Wennappuwa",
-            "division-122": "Medawachchiya",
-            "division-123": "Horowupotana",
-            "division-124": "Anuradhapura-East",
-            "division-125": "Anuradhapura-West",
-            "division-126": "Kalawewa",
-            "division-127": "Mihintale",
-            "division-128": "Kekirawa",
-            "division-129": "Minneriya",
-            "division-130": "Medirigiriya",
-            "division-131": "Polonnaruwa",
-            "division-132": "Mahiyangane",
-            "division-133": "Wiyaluwa",
-            "division-134": "Passara",
-            "division-135": "Badulla",
-            "division-136": "Hali_Ela",
-            "division-137": "Uva-Paranagama",
-            "division-138": "Welimada",
-            "division-139": "Bandarawela",
-            "division-140": "Haputale",
-            "division-141": "Bibile",
-            "division-142": "Monaragala",
-            "division-143": "Wellawaya",
-            "division-144": "Eheliyagoda",
-            "division-145": "Ratnapura",
-            "division-146": "Pelmadulla",
-            "division-147": "Balangoda",
-            "division-148": "Rakwana",
-            "division-149": "Nivitigala",
-            "division-150": "Kalawana",
-            "division-151": "Kolonna",
-            "division-152": "Dedigama",
-            "division-153": "Galigamuwa",
-            "division-154": "Kegalla",
-            "division-155": "Rambukkana",
-            "division-156": "Mawanella",
-            "division-157": "Aranayake",
-            "division-158": "Yatiyantota",
-            "division-159": "Ruwanwella",
-            "division-160": "Deraniyagala",
-        };
+        fetch('./Division.json')
+            .then(response => response.json())
+            .then(data => {
+                divisionArray = data;
+            })
+            .catch(error => {
+                console.error('Error fetching the JSON file:', error);
+            });
 
         function getProvinceName(dataId) {
-            return provinceMap[dataId] || "Unknown Province";
+            const division = divisionArray.find(province => province["division-id"] === dataId);
+            return division ? division["division-name"] : "Unknown Province";
         }
-
-        //console.log(getProvinceName("division-131"));
 
         document.addEventListener("DOMContentLoaded", function () {
             const app = document.getElementById('app');
@@ -660,9 +433,9 @@
 
             // Example usage:
             const dataArray = generateRandomDataArray(paths.length); // Generates an array with 5 objects
-            //console.log(dataArray);
 
-            //console.log(paths);
+
+
 
             // Function to calculate the centroid of a path
             function calculatePathCentroid(path) {
@@ -702,9 +475,6 @@
 
             // Add hover effect to each path
             paths.forEach(path => {
-                //placeDataIdText(path);
-                //console.log(path.getAttribute('data-id'));
-                //console.log(dataArray.find(data => data.id === path.getAttribute('data-id')));
                 let mapper = dataArray.find(data => data.id === path.getAttribute('data-id'));
 
                 path.setAttribute('fill', mapper.color);
@@ -712,17 +482,15 @@
                 path.addEventListener('mouseenter', function () {
                     this.setAttribute('opacity', 0.6);   // Change fill color on hover
                     lastHoveredProvince = getProvinceName(path.getAttribute('data-id'));
-                    //console.log(`${this.getAttribute('data-id')} this is the data-id on mouse over`);
+                    isCursorMoving = true;
                 });
 
                 path.addEventListener('mouseleave', function () {
-                    this.setAttribute('opacity', 1);    // Revert fill color when not hovering
-                    //console.log(`${this.getAttribute('data-id')} this is the data-id on mouse out`);
+                    this.setAttribute('opacity', 1);
+                    isCursorMoving = false;    // Revert fill color when not hovering
                 });
 
                 path.addEventListener('click', function () {
-                    //this.setAttribute('fill', 'red');
-                    //console.log(`${this.getAttribute('data-id')} this is the data-id on hover`);
                     theName = mapper.name;
                     updateProvinceName(theName);
                     console.log(theName);

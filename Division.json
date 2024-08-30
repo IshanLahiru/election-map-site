@@ -1,0 +1,645 @@
+[{
+        "division-id": "division-1",
+        "division-name": "Colombo-north"
+    },
+    {
+        "division-id": "division-1",
+        "division-name": "Colombo-North"
+    },
+    {
+        "division-id": "division-2",
+        "division-name": "Colombo-central"
+    },
+    {
+        "division-id": "division-3",
+        "division-name": "Boralla"
+    },
+    {
+        "division-id": "division-4",
+        "division-name": "Colombo-East"
+    },
+    {
+        "division-id": "division-5",
+        "division-name": "Colombo-central"
+    },
+    {
+        "division-id": "division-6",
+        "division-name": "Dehiwala"
+    },
+    {
+        "division-id": "division-7",
+        "division-name": "Ratmalana"
+    },
+    {
+        "division-id": "division-8",
+        "division-name": "Kolonnawa"
+    },
+    {
+        "division-id": "division-9",
+        "division-name": "Kotte"
+    },
+    {
+        "division-id": "division-10",
+        "division-name": "Kaduwela"
+    },
+    {
+        "division-id": "division-11",
+        "division-name": "Avissawella"
+    },
+    {
+        "division-id": "division-12",
+        "division-name": "Homgama"
+    },
+    {
+        "division-id": "division-13",
+        "division-name": "Maharagama"
+    },
+    {
+        "division-id": "division-14",
+        "division-name": "Kesbewa"
+    },
+    {
+        "division-id": "division-15",
+        "division-name": "Moratuwa"
+    },
+    {
+        "division-id": "division-16",
+        "division-name": "Wattala"
+    },
+    {
+        "division-id": "division-17",
+        "division-name": "Negambo"
+    },
+    {
+        "division-id": "division-18",
+        "division-name": "Katana"
+    },
+    {
+        "division-id": "division-19",
+        "division-name": "Divulapitiya"
+    },
+    {
+        "division-id": "division-20",
+        "division-name": "Mirigama"
+    },
+    {
+        "division-id": "division-21",
+        "division-name": "Minuwangoda"
+    },
+    {
+        "division-id": "division-22",
+        "division-name": "Attanagalla"
+    },
+    {
+        "division-id": "division-23",
+        "division-name": "Gampaha"
+    },
+    {
+        "division-id": "division-24",
+        "division-name": "Ja-Ela"
+    },
+    {
+        "division-id": "division-25",
+        "division-name": "Mahara"
+    },
+    {
+        "division-id": "division-26",
+        "division-name": "Dompe"
+    },
+    {
+        "division-id": "division-27",
+        "division-name": "Biyagama"
+    },
+    {
+        "division-id": "division-28",
+        "division-name": "Kelaniya"
+    },
+    {
+        "division-id": "division-29",
+        "division-name": "Panadura"
+    },
+    {
+        "division-id": "division-30",
+        "division-name": "Bandaragama"
+    },
+    {
+        "division-id": "division-31",
+        "division-name": "Horana"
+    },
+    {
+        "division-id": "division-32",
+        "division-name": "Bulathsinhala"
+    },
+    {
+        "division-id": "division-33",
+        "division-name": "Matugama"
+    },
+    {
+        "division-id": "division-34",
+        "division-name": "Kaluthara"
+    },
+    {
+        "division-id": "division-35",
+        "division-name": "Beruwala"
+    },
+    {
+        "division-id": "division-36",
+        "division-name": "Agalawatta"
+    },
+    {
+        "division-id": "division-37",
+        "division-name": "Galagedara"
+    },
+    {
+        "division-id": "division-38",
+        "division-name": "Harispattuwa"
+    },
+    {
+        "division-id": "division-39",
+        "division-name": "Patha-Dumbara"
+    },
+    {
+        "division-id": "division-40",
+        "division-name": "Udu-Dumbara"
+    },
+    {
+        "division-id": "division-41",
+        "division-name": "Teldeniya"
+    },
+    {
+        "division-id": "division-42",
+        "division-name": "Kundasale"
+    },
+    {
+        "division-id": "division-43",
+        "division-name": "Hewaheta"
+    },
+    {
+        "division-id": "division-44",
+        "division-name": "Senkadagala"
+    },
+    {
+        "division-id": "division-45",
+        "division-name": "Mahanuwara"
+    },
+    {
+        "division-id": "division-46",
+        "division-name": "Yatinuwara"
+    },
+    {
+        "division-id": "division-47",
+        "division-name": "Udunuwara"
+    },
+    {
+        "division-id": "division-48",
+        "division-name": "Gampola"
+    },
+    {
+        "division-id": "division-49",
+        "division-name": "Nawalapitiya"
+    },
+    {
+        "division-id": "division-50",
+        "division-name": "Dambulla"
+    },
+    {
+        "division-id": "division-51",
+        "division-name": "Laggala"
+    },
+    {
+        "division-id": "division-52",
+        "division-name": "Matale"
+    },
+    {
+        "division-id": "division-53",
+        "division-name": "Rattota"
+    },
+    {
+        "division-id": "division-54",
+        "division-name": "Neliya-Maskeliya"
+    },
+    {
+        "division-id": "division-55",
+        "division-name": "Kotmale"
+    },
+    {
+        "division-id": "division-56",
+        "division-name": "Hanguranketha"
+    },
+    {
+        "division-id": "division-57",
+        "division-name": "Walapane"
+    },
+    {
+        "division-id": "division-58",
+        "division-name": "Balapitiya"
+    },
+    {
+        "division-id": "division-59",
+        "division-name": "Ambalangoda"
+    },
+    {
+        "division-id": "division-60",
+        "division-name": "Karandeniya"
+    },
+    {
+        "division-id": "division-61",
+        "division-name": "Bentara-Elpitiya"
+    },
+    {
+        "division-id": "division-62",
+        "division-name": "Hiniduma"
+    },
+    {
+        "division-id": "division-63",
+        "division-name": "Baddegama"
+    },
+    {
+        "division-id": "division-64",
+        "division-name": "Ratagama"
+    },
+    {
+        "division-id": "division-65",
+        "division-name": "Galle"
+    },
+    {
+        "division-id": "division-66",
+        "division-name": "Akmeemana"
+    },
+    {
+        "division-id": "division-67",
+        "division-name": "Habaraduwa"
+    },
+    {
+        "division-id": "division-68",
+        "division-name": "Deniyaya"
+    },
+    {
+        "division-id": "division-69",
+        "division-name": "Hakmana"
+    },
+    {
+        "division-id": "division-70",
+        "division-name": "Akuressa"
+    },
+    {
+        "division-id": "division-71",
+        "division-name": "Kamburupitiya"
+    },
+    {
+        "division-id": "division-72",
+        "division-name": "Devinuwara"
+    },
+    {
+        "division-id": "division-73",
+        "division-name": "Matara"
+    },
+    {
+        "division-id": "division-74",
+        "division-name": "Weligama"
+    },
+    {
+        "division-id": "division-75",
+        "division-name": "Mulkirigala"
+    },
+    {
+        "division-id": "division-76",
+        "division-name": "Beliatta"
+    },
+    {
+        "division-id": "division-77",
+        "division-name": "Tangalle"
+    },
+    {
+        "division-id": "division-78",
+        "division-name": "Tissamaharamaya"
+    },
+    {
+        "division-id": "division-79",
+        "division-name": "Kayts"
+    },
+    {
+        "division-id": "division-80",
+        "division-name": "Vaddukkoddai"
+    },
+    {
+        "division-id": "division-81",
+        "division-name": "kankasanthurai"
+    },
+    {
+        "division-id": "division-82",
+        "division-name": "Manipay"
+    },
+    {
+        "division-id": "division-83",
+        "division-name": "Kopay"
+    },
+    {
+        "division-id": "division-84",
+        "division-name": "Udupiddy"
+    },
+    {
+        "division-id": "division-85",
+        "division-name": "Point Pedro"
+    },
+    {
+        "division-id": "division-86",
+        "division-name": "Chavakachcheri"
+    },
+    {
+        "division-id": "division-87",
+        "division-name": "Nallur"
+    },
+    {
+        "division-id": "division-88",
+        "division-name": "Jaffna"
+    },
+    {
+        "division-id": "division-89",
+        "division-name": "Kilinochchi"
+    },
+    {
+        "division-id": "division-90",
+        "division-name": "Mannar"
+    },
+    {
+        "division-id": "division-91",
+        "division-name": "Vavuniya"
+    },
+    {
+        "division-id": "division-92",
+        "division-name": "Mullaitivu"
+    },
+    {
+        "division-id": "division-93",
+        "division-name": "Kalkudah"
+    },
+    {
+        "division-id": "division-94",
+        "division-name": "Batticaloa"
+    },
+    {
+        "division-id": "division-95",
+        "division-name": "Padiruppu"
+    },
+    {
+        "division-id": "division-96",
+        "division-name": "Ampara"
+    },
+    {
+        "division-id": "division-97",
+        "division-name": "Sammanturai"
+    },
+    {
+        "division-id": "division-98",
+        "division-name": "Kalmunai"
+    },
+    {
+        "division-id": "division-99",
+        "division-name": "Potuvil"
+    },
+    {
+        "division-id": "division-100",
+        "division-name": "Seruwila"
+    },
+    {
+        "division-id": "division-101",
+        "division-name": "Trincomalee"
+    },
+    {
+        "division-id": "division-102",
+        "division-name": "Mutur"
+    },
+    {
+        "division-id": "division-103",
+        "division-name": "Galgamuwa"
+    },
+    {
+        "division-id": "division-104",
+        "division-name": "Nikaweratiya"
+    },
+    {
+        "division-id": "division-105",
+        "division-name": "Yapahwa"
+    },
+    {
+        "division-id": "division-106",
+        "division-name": "Hiriyala"
+    },
+    {
+        "division-id": "division-107",
+        "division-name": "Wariyapola"
+    },
+    {
+        "division-id": "division-108",
+        "division-name": "Panduwasnuwara"
+    },
+    {
+        "division-id": "division-109",
+        "division-name": "Bingiriya"
+    },
+    {
+        "division-id": "division-110",
+        "division-name": "Katugampola"
+    },
+    {
+        "division-id": "division-111",
+        "division-name": "Kuliyapitiya"
+    },
+    {
+        "division-id": "division-112",
+        "division-name": "Dambadeniya"
+    },
+    {
+        "division-id": "division-113",
+        "division-name": "Polgahawela"
+    },
+    {
+        "division-id": "division-114",
+        "division-name": "Kurunegala"
+    },
+    {
+        "division-id": "division-115",
+        "division-name": "Mawathagama"
+    },
+    {
+        "division-id": "division-116",
+        "division-name": "Dodangaslanda"
+    },
+    {
+        "division-id": "division-117",
+        "division-name": "Puththalama"
+    },
+    {
+        "division-id": "division-118",
+        "division-name": "Anamaduwa"
+    },
+    {
+        "division-id": "division-119",
+        "division-name": "Chillaw"
+    },
+    {
+        "division-id": "division-120",
+        "division-name": "Nattandiya"
+    },
+    {
+        "division-id": "division-121",
+        "division-name": "Wennappuwa"
+    },
+    {
+        "division-id": "division-122",
+        "division-name": "Medawachchiya"
+    },
+    {
+        "division-id": "division-123",
+        "division-name": "Horowupotana"
+    },
+    {
+        "division-id": "division-124",
+        "division-name": "Anuradhapura-East"
+    },
+    {
+        "division-id": "division-125",
+        "division-name": "Anuradhapura-West"
+    },
+    {
+        "division-id": "division-126",
+        "division-name": "Kalawewa"
+    },
+    {
+        "division-id": "division-127",
+        "division-name": "Mihintale"
+    },
+    {
+        "division-id": "division-128",
+        "division-name": "Kekirawa"
+    },
+    {
+        "division-id": "division-129",
+        "division-name": "Minneriya"
+    },
+    {
+        "division-id": "division-130",
+        "division-name": "Medirigiriya"
+    },
+    {
+        "division-id": "division-131",
+        "division-name": "Polonnaruwa"
+    },
+    {
+        "division-id": "division-132",
+        "division-name": "Mahiyangane"
+    },
+    {
+        "division-id": "division-133",
+        "division-name": "Wiyaluwa"
+    },
+    {
+        "division-id": "division-134",
+        "division-name": "Passara"
+    },
+    {
+        "division-id": "division-135",
+        "division-name": "Badulla"
+    },
+    {
+        "division-id": "division-136",
+        "division-name": "Hali_Ela"
+    },
+    {
+        "division-id": "division-137",
+        "division-name": "Uva-Paranagama"
+    },
+    {
+        "division-id": "division-138",
+        "division-name": "Welimada"
+    },
+    {
+        "division-id": "division-139",
+        "division-name": "Bandarawela"
+    },
+    {
+        "division-id": "division-140",
+        "division-name": "Haputale"
+    },
+    {
+        "division-id": "division-141",
+        "division-name": "Bibile"
+    },
+    {
+        "division-id": "division-142",
+        "division-name": "Monaragala"
+    },
+    {
+        "division-id": "division-143",
+        "division-name": "Wellawaya"
+    },
+    {
+        "division-id": "division-144",
+        "division-name": "Eheliyagoda"
+    },
+    {
+        "division-id": "division-145",
+        "division-name": "Ratnapura"
+    },
+    {
+        "division-id": "division-146",
+        "division-name": "Pelmadulla"
+    },
+    {
+        "division-id": "division-147",
+        "division-name": "Balangoda"
+    },
+    {
+        "division-id": "division-148",
+        "division-name": "Rakwana"
+    },
+    {
+        "division-id": "division-149",
+        "division-name": "Nivitigala"
+    },
+    {
+        "division-id": "division-150",
+        "division-name": "Kalawana"
+    },
+    {
+        "division-id": "division-151",
+        "division-name": "Kolonna"
+    },
+    {
+        "division-id": "division-152",
+        "division-name": "Dedigama"
+    },
+    {
+        "division-id": "division-153",
+        "division-name": "Galigamuwa"
+    },
+    {
+        "division-id": "division-154",
+        "division-name": "Kegalla"
+    },
+    {
+        "division-id": "division-155",
+        "division-name": "Rambukkana"
+    },
+    {
+        "division-id": "division-156",
+        "division-name": "Mawanella"
+    },
+    {
+        "division-id": "division-157",
+        "division-name": "Aranayake"
+    },
+    {
+        "division-id": "division-158",
+        "division-name": "Yatiyantota"
+    },
+    {
+        "division-id": "division-159",
+        "division-name": "Ruwanwella"
+    },
+    {
+        "division-id": "division-160",
+        "division-name": "Deraniyagala"
+    }
+]
