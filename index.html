@@ -72,6 +72,7 @@
             border-radius: 8px;
             box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
             padding: 10px;
+            margin-bottom: 10px;
             width: 350px;
             font-family: Arial, sans-serif;
         }
@@ -221,6 +222,12 @@
             font-size: 1.2em;
         }
 
+        .results-container {
+            max-height: 700px; /* Set a maximum height */
+            overflow-y: auto;  /* Enable vertical scrolling */
+            padding-right: 10px; /* Optional: adds some padding to the right */
+        }
+
         /* Responsive styles */
         @media (max-width: 768px) {
             #container {
@@ -248,9 +255,920 @@
     <div id="app"></div>
 
     <script>
-        let divisionArray = new Array(0);
+        let divisionArray = [{
+            "division-id": "division-1",
+            "division-name": "Colombo-north"
+        },
+        {
+            "division-id": "division-1",
+            "division-name": "Colombo-North"
+        },
+        {
+            "division-id": "division-2",
+            "division-name": "Colombo-central"
+        },
+        {
+            "division-id": "division-3",
+            "division-name": "Boralla"
+        },
+        {
+            "division-id": "division-4",
+            "division-name": "Colombo-East"
+        },
+        {
+            "division-id": "division-5",
+            "division-name": "Colombo-central"
+        },
+        {
+            "division-id": "division-6",
+            "division-name": "Dehiwala"
+        },
+        {
+            "division-id": "division-7",
+            "division-name": "Ratmalana"
+        },
+        {
+            "division-id": "division-8",
+            "division-name": "Kolonnawa"
+        },
+        {
+            "division-id": "division-9",
+            "division-name": "Kotte"
+        },
+        {
+            "division-id": "division-10",
+            "division-name": "Kaduwela"
+        },
+        {
+            "division-id": "division-11",
+            "division-name": "Avissawella"
+        },
+        {
+            "division-id": "division-12",
+            "division-name": "Homgama"
+        },
+        {
+            "division-id": "division-13",
+            "division-name": "Maharagama"
+        },
+        {
+            "division-id": "division-14",
+            "division-name": "Kesbewa"
+        },
+        {
+            "division-id": "division-15",
+            "division-name": "Moratuwa"
+        },
+        {
+            "division-id": "division-16",
+            "division-name": "Wattala"
+        },
+        {
+            "division-id": "division-17",
+            "division-name": "Negambo"
+        },
+        {
+            "division-id": "division-18",
+            "division-name": "Katana"
+        },
+        {
+            "division-id": "division-19",
+            "division-name": "Divulapitiya"
+        },
+        {
+            "division-id": "division-20",
+            "division-name": "Mirigama"
+        },
+        {
+            "division-id": "division-21",
+            "division-name": "Minuwangoda"
+        },
+        {
+            "division-id": "division-22",
+            "division-name": "Attanagalla"
+        },
+        {
+            "division-id": "division-23",
+            "division-name": "Gampaha"
+        },
+        {
+            "division-id": "division-24",
+            "division-name": "Ja-Ela"
+        },
+        {
+            "division-id": "division-25",
+            "division-name": "Mahara"
+        },
+        {
+            "division-id": "division-26",
+            "division-name": "Dompe"
+        },
+        {
+            "division-id": "division-27",
+            "division-name": "Biyagama"
+        },
+        {
+            "division-id": "division-28",
+            "division-name": "Kelaniya"
+        },
+        {
+            "division-id": "division-29",
+            "division-name": "Panadura"
+        },
+        {
+            "division-id": "division-30",
+            "division-name": "Bandaragama"
+        },
+        {
+            "division-id": "division-31",
+            "division-name": "Horana"
+        },
+        {
+            "division-id": "division-32",
+            "division-name": "Bulathsinhala"
+        },
+        {
+            "division-id": "division-33",
+            "division-name": "Matugama"
+        },
+        {
+            "division-id": "division-34",
+            "division-name": "Kaluthara"
+        },
+        {
+            "division-id": "division-35",
+            "division-name": "Beruwala"
+        },
+        {
+            "division-id": "division-36",
+            "division-name": "Agalawatta"
+        },
+        {
+            "division-id": "division-37",
+            "division-name": "Galagedara"
+        },
+        {
+            "division-id": "division-38",
+            "division-name": "Harispattuwa"
+        },
+        {
+            "division-id": "division-39",
+            "division-name": "Patha-Dumbara"
+        },
+        {
+            "division-id": "division-40",
+            "division-name": "Udu-Dumbara"
+        },
+        {
+            "division-id": "division-41",
+            "division-name": "Teldeniya"
+        },
+        {
+            "division-id": "division-42",
+            "division-name": "Kundasale"
+        },
+        {
+            "division-id": "division-43",
+            "division-name": "Hewaheta"
+        },
+        {
+            "division-id": "division-44",
+            "division-name": "Senkadagala"
+        },
+        {
+            "division-id": "division-45",
+            "division-name": "Mahanuwara"
+        },
+        {
+            "division-id": "division-46",
+            "division-name": "Yatinuwara"
+        },
+        {
+            "division-id": "division-47",
+            "division-name": "Udunuwara"
+        },
+        {
+            "division-id": "division-48",
+            "division-name": "Gampola"
+        },
+        {
+            "division-id": "division-49",
+            "division-name": "Nawalapitiya"
+        },
+        {
+            "division-id": "division-50",
+            "division-name": "Dambulla"
+        },
+        {
+            "division-id": "division-51",
+            "division-name": "Laggala"
+        },
+        {
+            "division-id": "division-52",
+            "division-name": "Matale"
+        },
+        {
+            "division-id": "division-53",
+            "division-name": "Rattota"
+        },
+        {
+            "division-id": "division-54",
+            "division-name": "Neliya-Maskeliya"
+        },
+        {
+            "division-id": "division-55",
+            "division-name": "Kotmale"
+        },
+        {
+            "division-id": "division-56",
+            "division-name": "Hanguranketha"
+        },
+        {
+            "division-id": "division-57",
+            "division-name": "Walapane"
+        },
+        {
+            "division-id": "division-58",
+            "division-name": "Balapitiya"
+        },
+        {
+            "division-id": "division-59",
+            "division-name": "Ambalangoda"
+        },
+        {
+            "division-id": "division-60",
+            "division-name": "Karandeniya"
+        },
+        {
+            "division-id": "division-61",
+            "division-name": "Bentara-Elpitiya"
+        },
+        {
+            "division-id": "division-62",
+            "division-name": "Hiniduma"
+        },
+        {
+            "division-id": "division-63",
+            "division-name": "Baddegama"
+        },
+        {
+            "division-id": "division-64",
+            "division-name": "Ratagama"
+        },
+        {
+            "division-id": "division-65",
+            "division-name": "Galle"
+        },
+        {
+            "division-id": "division-66",
+            "division-name": "Akmeemana"
+        },
+        {
+            "division-id": "division-67",
+            "division-name": "Habaraduwa"
+        },
+        {
+            "division-id": "division-68",
+            "division-name": "Deniyaya"
+        },
+        {
+            "division-id": "division-69",
+            "division-name": "Hakmana"
+        },
+        {
+            "division-id": "division-70",
+            "division-name": "Akuressa"
+        },
+        {
+            "division-id": "division-71",
+            "division-name": "Kamburupitiya"
+        },
+        {
+            "division-id": "division-72",
+            "division-name": "Devinuwara"
+        },
+        {
+            "division-id": "division-73",
+            "division-name": "Matara"
+        },
+        {
+            "division-id": "division-74",
+            "division-name": "Weligama"
+        },
+        {
+            "division-id": "division-75",
+            "division-name": "Mulkirigala"
+        },
+        {
+            "division-id": "division-76",
+            "division-name": "Beliatta"
+        },
+        {
+            "division-id": "division-77",
+            "division-name": "Tangalle"
+        },
+        {
+            "division-id": "division-78",
+            "division-name": "Tissamaharamaya"
+        },
+        {
+            "division-id": "division-79",
+            "division-name": "Kayts"
+        },
+        {
+            "division-id": "division-80",
+            "division-name": "Vaddukkoddai"
+        },
+        {
+            "division-id": "division-81",
+            "division-name": "kankasanthurai"
+        },
+        {
+            "division-id": "division-82",
+            "division-name": "Manipay"
+        },
+        {
+            "division-id": "division-83",
+            "division-name": "Kopay"
+        },
+        {
+            "division-id": "division-84",
+            "division-name": "Udupiddy"
+        },
+        {
+            "division-id": "division-85",
+            "division-name": "Point Pedro"
+        },
+        {
+            "division-id": "division-86",
+            "division-name": "Chavakachcheri"
+        },
+        {
+            "division-id": "division-87",
+            "division-name": "Nallur"
+        },
+        {
+            "division-id": "division-88",
+            "division-name": "Jaffna"
+        },
+        {
+            "division-id": "division-89",
+            "division-name": "Kilinochchi"
+        },
+        {
+            "division-id": "division-90",
+            "division-name": "Mannar"
+        },
+        {
+            "division-id": "division-91",
+            "division-name": "Vavuniya"
+        },
+        {
+            "division-id": "division-92",
+            "division-name": "Mullaitivu"
+        },
+        {
+            "division-id": "division-93",
+            "division-name": "Kalkudah"
+        },
+        {
+            "division-id": "division-94",
+            "division-name": "Batticaloa"
+        },
+        {
+            "division-id": "division-95",
+            "division-name": "Padiruppu"
+        },
+        {
+            "division-id": "division-96",
+            "division-name": "Ampara"
+        },
+        {
+            "division-id": "division-97",
+            "division-name": "Sammanturai"
+        },
+        {
+            "division-id": "division-98",
+            "division-name": "Kalmunai"
+        },
+        {
+            "division-id": "division-99",
+            "division-name": "Potuvil"
+        },
+        {
+            "division-id": "division-100",
+            "division-name": "Seruwila"
+        },
+        {
+            "division-id": "division-101",
+            "division-name": "Trincomalee"
+        },
+        {
+            "division-id": "division-102",
+            "division-name": "Mutur"
+        },
+        {
+            "division-id": "division-103",
+            "division-name": "Galgamuwa"
+        },
+        {
+            "division-id": "division-104",
+            "division-name": "Nikaweratiya"
+        },
+        {
+            "division-id": "division-105",
+            "division-name": "Yapahwa"
+        },
+        {
+            "division-id": "division-106",
+            "division-name": "Hiriyala"
+        },
+        {
+            "division-id": "division-107",
+            "division-name": "Wariyapola"
+        },
+        {
+            "division-id": "division-108",
+            "division-name": "Panduwasnuwara"
+        },
+        {
+            "division-id": "division-109",
+            "division-name": "Bingiriya"
+        },
+        {
+            "division-id": "division-110",
+            "division-name": "Katugampola"
+        },
+        {
+            "division-id": "division-111",
+            "division-name": "Kuliyapitiya"
+        },
+        {
+            "division-id": "division-112",
+            "division-name": "Dambadeniya"
+        },
+        {
+            "division-id": "division-113",
+            "division-name": "Polgahawela"
+        },
+        {
+            "division-id": "division-114",
+            "division-name": "Kurunegala"
+        },
+        {
+            "division-id": "division-115",
+            "division-name": "Mawathagama"
+        },
+        {
+            "division-id": "division-116",
+            "division-name": "Dodangaslanda"
+        },
+        {
+            "division-id": "division-117",
+            "division-name": "Puththalama"
+        },
+        {
+            "division-id": "division-118",
+            "division-name": "Anamaduwa"
+        },
+        {
+            "division-id": "division-119",
+            "division-name": "Chillaw"
+        },
+        {
+            "division-id": "division-120",
+            "division-name": "Nattandiya"
+        },
+        {
+            "division-id": "division-121",
+            "division-name": "Wennappuwa"
+        },
+        {
+            "division-id": "division-122",
+            "division-name": "Medawachchiya"
+        },
+        {
+            "division-id": "division-123",
+            "division-name": "Horowupotana"
+        },
+        {
+            "division-id": "division-124",
+            "division-name": "Anuradhapura-East"
+        },
+        {
+            "division-id": "division-125",
+            "division-name": "Anuradhapura-West"
+        },
+        {
+            "division-id": "division-126",
+            "division-name": "Kalawewa"
+        },
+        {
+            "division-id": "division-127",
+            "division-name": "Mihintale"
+        },
+        {
+            "division-id": "division-128",
+            "division-name": "Kekirawa"
+        },
+        {
+            "division-id": "division-129",
+            "division-name": "Minneriya"
+        },
+        {
+            "division-id": "division-130",
+            "division-name": "Medirigiriya"
+        },
+        {
+            "division-id": "division-131",
+            "division-name": "Polonnaruwa"
+        },
+        {
+            "division-id": "division-132",
+            "division-name": "Mahiyangane"
+        },
+        {
+            "division-id": "division-133",
+            "division-name": "Wiyaluwa"
+        },
+        {
+            "division-id": "division-134",
+            "division-name": "Passara"
+        },
+        {
+            "division-id": "division-135",
+            "division-name": "Badulla"
+        },
+        {
+            "division-id": "division-136",
+            "division-name": "Hali_Ela"
+        },
+        {
+            "division-id": "division-137",
+            "division-name": "Uva-Paranagama"
+        },
+        {
+            "division-id": "division-138",
+            "division-name": "Welimada"
+        },
+        {
+            "division-id": "division-139",
+            "division-name": "Bandarawela"
+        },
+        {
+            "division-id": "division-140",
+            "division-name": "Haputale"
+        },
+        {
+            "division-id": "division-141",
+            "division-name": "Bibile"
+        },
+        {
+            "division-id": "division-142",
+            "division-name": "Monaragala"
+        },
+        {
+            "division-id": "division-143",
+            "division-name": "Wellawaya"
+        },
+        {
+            "division-id": "division-144",
+            "division-name": "Eheliyagoda"
+        },
+        {
+            "division-id": "division-145",
+            "division-name": "Ratnapura"
+        },
+        {
+            "division-id": "division-146",
+            "division-name": "Pelmadulla"
+        },
+        {
+            "division-id": "division-147",
+            "division-name": "Balangoda"
+        },
+        {
+            "division-id": "division-148",
+            "division-name": "Rakwana"
+        },
+        {
+            "division-id": "division-149",
+            "division-name": "Nivitigala"
+        },
+        {
+            "division-id": "division-150",
+            "division-name": "Kalawana"
+        },
+        {
+            "division-id": "division-151",
+            "division-name": "Kolonna"
+        },
+        {
+            "division-id": "division-152",
+            "division-name": "Dedigama"
+        },
+        {
+            "division-id": "division-153",
+            "division-name": "Galigamuwa"
+        },
+        {
+            "division-id": "division-154",
+            "division-name": "Kegalla"
+        },
+        {
+            "division-id": "division-155",
+            "division-name": "Rambukkana"
+        },
+        {
+            "division-id": "division-156",
+            "division-name": "Mawanella"
+        },
+        {
+            "division-id": "division-157",
+            "division-name": "Aranayake"
+        },
+        {
+            "division-id": "division-158",
+            "division-name": "Yatiyantota"
+        },
+        {
+            "division-id": "division-159",
+            "division-name": "Ruwanwella"
+        },
+        {
+            "division-id": "division-160",
+            "division-name": "Deraniyagala"
+        }
+        ];
 
-        let theName = "John Doe";
+        const resultArray = [{
+            "timestamp": "2019-11-17 05:54:42.216066",
+            "level": "POLLING-DIVISION",
+            "ed_code": "10",
+            "ed_name": "Jaffna",
+            "pd_code": "10C",
+            "pd_name": "Kankesanthurai",
+            "by_party": [
+                {
+                    "party_code": "IND01",
+                    "votes": 119,
+                    "percentage": "0.42",
+                    "party_name": "Independent Candidate-01",
+                    "candidate": "Aparakke Pungngananda Thero"
+                },
+                {
+                    "party_code": "IND02",
+                    "votes": 190,
+                    "percentage": "0.66",
+                    "party_name": "Independent Candidate-02",
+                    "candidate": "S. Amarasinghe"
+                },
+                {
+                    "party_code": "IND03",
+                    "votes": 48,
+                    "percentage": "0.17",
+                    "party_name": "Independent Candidate-03",
+                    "candidate": "Idroos Mohamadhu Illiyas"
+                },
+                {
+                    "party_code": "IND04",
+                    "votes": 37,
+                    "percentage": "0.13",
+                    "party_name": "Independent Candidate-04",
+                    "candidate": "A. H. M. Alavi"
+                },
+                {
+                    "party_code": "DUNF",
+                    "votes": 586,
+                    "percentage": "2.05",
+                    "party_name": "Democratic United National Front",
+                    "candidate": "Ariyawansha Dissanayake"
+                },
+                {
+                    "party_code": "OWORS",
+                    "votes": 51,
+                    "percentage": "0.18",
+                    "party_name": "Okkoma Wasiyo Okkoma Rajawaru Sanvidanaya",
+                    "candidate": "P. M. Edirisinghe"
+                },
+                {
+                    "party_code": "IND05",
+                    "votes": 191,
+                    "percentage": "0.67",
+                    "party_name": "Independent Candidate-05",
+                    "candidate": "Sarath Keerthirathne"
+                },
+                {
+                    "party_code": "IND06",
+                    "votes": 12,
+                    "percentage": "0.04",
+                    "party_name": "Independent Candidate-06",
+                    "candidate": "Chandrasekara Herath Hitihami Koralalage Samansiri"
+                },
+                {
+                    "party_code": "USP",
+                    "votes": 75,
+                    "percentage": "0.26",
+                    "party_name": "United Socialist Party",
+                    "candidate": "Sirithunga Jayasuriya"
+                },
+                {
+                    "party_code": "RJA",
+                    "votes": 63,
+                    "percentage": "0.22",
+                    "party_name": "Ruhuna Janatha Alliance",
+                    "candidate": "Ajantha De Zoysa"
+                },
+                {
+                    "party_code": "DNM",
+                    "votes": 58,
+                    "percentage": "0.20",
+                    "party_name": "Democratic National Movement",
+                    "candidate": "Aruna De Zoysa"
+                },
+                {
+                    "party_code": "NMPP",
+                    "votes": 101,
+                    "percentage": "0.35",
+                    "party_name": "National Movement for People's Power",
+                    "candidate": "Anura Kumara Dissanayaka"
+                },
+                {
+                    "party_code": "FSP",
+                    "votes": 20,
+                    "percentage": "0.07",
+                    "party_name": "Frontline Socialist Party",
+                    "candidate": "Duminda Nagamuwa"
+                },
+                {
+                    "party_code": "JSWP",
+                    "votes": 58,
+                    "percentage": "0.20",
+                    "party_name": "Jathika Sangwardhena Peramuna",
+                    "candidate": "Rohan Pallewatta"
+                },
+                {
+                    "party_code": "IND07",
+                    "votes": 88,
+                    "percentage": "0.31",
+                    "party_name": "Independent Candidate-07",
+                    "candidate": "Ketagoda Jayantha"
+                },
+                {
+                    "party_code": "OPPP",
+                    "votes": 24,
+                    "percentage": "0.08",
+                    "party_name": "Our Power of People Party",
+                    "candidate": "Saman Perera"
+                },
+                {
+                    "party_code": "IND08",
+                    "votes": 106,
+                    "percentage": "0.37",
+                    "party_name": "Independent Candidate-08",
+                    "candidate": "Anuruddha Polgampala"
+                },
+                {
+                    "party_code": "IND09",
+                    "votes": 92,
+                    "percentage": "0.32",
+                    "party_name": "Independent Candidate-09",
+                    "candidate": "Warnakulasooriya Milroy Surgeus Fernando"
+                },
+                {
+                    "party_code": "NDF",
+                    "votes": 23773,
+                    "percentage": "83.20",
+                    "party_name": "New Democratic Front",
+                    "candidate": "Sajith Premadasa"
+                },
+                {
+                    "party_code": "JSP",
+                    "votes": 86,
+                    "percentage": "0.30",
+                    "party_name": "Jana Setha Peramuna",
+                    "candidate": "Battaramulle Seelarathana Thero"
+                },
+                {
+                    "party_code": "NSSP",
+                    "votes": 23,
+                    "percentage": "0.08",
+                    "party_name": "Nawa Sama Samaja Party",
+                    "candidate": "Badde Gamage Nandimithra"
+                },
+                {
+                    "party_code": "NSU",
+                    "votes": 37,
+                    "percentage": "0.13",
+                    "party_name": "Nawa Sihala Urumaya",
+                    "candidate": "Sarath Manamendra"
+                },
+                {
+                    "party_code": "IND10",
+                    "votes": 475,
+                    "percentage": "1.66",
+                    "party_name": "Independent Candidate-10",
+                    "candidate": "M. K. Shivajilingam"
+                },
+                {
+                    "party_code": "IND11",
+                    "votes": 99,
+                    "percentage": "0.35",
+                    "party_name": "Independent Candidate-11",
+                    "candidate": "M. L. A. M. Hizbullah"
+                },
+                {
+                    "party_code": "SLPP",
+                    "votes": 1688,
+                    "percentage": "5.91",
+                    "party_name": "Sri Lanka Podujana Peramuna",
+                    "candidate": "Gotabaya Rajapaksa"
+                },
+                {
+                    "party_code": "NUA",
+                    "votes": 18,
+                    "percentage": "0.06",
+                    "party_name": "National Unity Alliance",
+                    "candidate": "Namal Rajapaksha"
+                },
+                {
+                    "party_code": "SLLP",
+                    "votes": 81,
+                    "percentage": "0.28",
+                    "party_name": "Sri Lanka Labour Party",
+                    "candidate": "A. S. P. Liyanage"
+                },
+                {
+                    "party_code": "IND12",
+                    "votes": 25,
+                    "percentage": "0.09",
+                    "party_name": "Independent Candidate-12",
+                    "candidate": "Ashoka Wadigamangawa"
+                },
+                {
+                    "party_code": "IND13",
+                    "votes": 38,
+                    "percentage": "0.13",
+                    "party_name": "Independent Candidate-13",
+                    "candidate": "Piyasiri Wijenayake"
+                },
+                {
+                    "party_code": "SPSL",
+                    "votes": 66,
+                    "percentage": "0.23",
+                    "party_name": "Socialist Party of Sri Lanka",
+                    "candidate": "Ajantha Perera"
+                },
+                {
+                    "party_code": "IND14",
+                    "votes": 60,
+                    "percentage": "0.21",
+                    "party_name": "Independent Candidate-14",
+                    "candidate": "Rajiva Wijesinha"
+                },
+                {
+                    "party_code": "SEP",
+                    "votes": 23,
+                    "percentage": "0.08",
+                    "party_name": "Socialist Equality Party",
+                    "candidate": "Pani Wijesiriwardane"
+                },
+                {
+                    "party_code": "IND15",
+                    "votes": 31,
+                    "percentage": "0.11",
+                    "party_name": "Independent Candidate-15",
+                    "candidate": "Samaraweera Weerawanni"
+                },
+                {
+                    "party_code": "ONF",
+                    "votes": 68,
+                    "percentage": "0.24",
+                    "party_name": "Our National Front",
+                    "candidate": "Subbramaniyam Gunarathnam"
+                },
+                {
+                    "party_code": "NPP",
+                    "votes": 64,
+                    "percentage": "0.22",
+                    "party_name": "National Peoples Party",
+                    "candidate": "Mahesh Senanayake"
+                }
+            ],
+            "summary": {
+                "valid": 28574,
+                "rejected": 988,
+                "polled": 29562,
+                "electors": 63428,
+                "percent_valid": "96.66",
+                "percent_rejected": "3.34",
+                "percent_polled": "46.61"
+            },
+            "type": "PRESIDENTIAL-FIRST",
+            "sequence_number": "0043"
+        }];
+
+        let theName = "Polling Results";
         // Main Content Component
         function createMainContent() {
             return `
@@ -264,11 +1182,46 @@
         function provinceName() {
             return `
                 <div id="provinceName">
-                    ${theName}
+                    ${`<h2>${theName}</h2>`}
                 </div>
             `;
         }
 
+        
+
+        function calculateCountrywideResults(divisions) {
+            const countrywideResults = [];
+        
+            const result = {};
+        
+            divisions.forEach(division => {
+                division.by_party.forEach(party => {
+                    if (!result[party.party_code]) {
+                        result[party.party_code] = {
+                            party_code: party.party_code,
+                            party_name: party.party_name,
+                            candidate: party.candidate,
+                            total_votes: 0
+                        };
+                    }
+                    result[party.party_code].total_votes += party.votes;
+                });
+            });
+            const totalVotes = Object.values(result).reduce((sum, party) => sum + party.total_votes, 0);
+            Object.keys(result).forEach(party_code => {
+                const party = result[party_code];
+                const percentage = ((party.total_votes / totalVotes) * 100).toFixed(2);
+        
+                countrywideResults.push({
+                    party_code: party.party_code,
+                    party_name: party.party_name,
+                    candidate: party.candidate,
+                    votes: party.total_votes,
+                    percentage: percentage
+                });
+            });
+            return countrywideResults;
+        }  
         function theSidebarCard(ob) {
             return `
                 <div class="card">
@@ -288,7 +1241,7 @@
                     </div>
                 </div>
             `;
-        }
+        }      
 
         function createSidebar() {
             return `
@@ -296,98 +1249,81 @@
                     <div class="sidebar-header">
                         ${provinceName()}
                     </div>
-                    ${theSidebarCard({
-                name: 'SLPP',
-                voteCount: 6853693,
-                percentage: 59.09,
-                seats: 3,
-                iconUrl: 'party-icon-url'
-            })}
+                    <div class="results-container">
+                        ${resultArray.length > 0 ? resultArray.map(ob => {
+                            return ob.by_party.map(party => {
+                                return theSidebarCard({
+                                    name: party.party_name,
+                                    voteCount: party.votes,
+                                    percentage: party.percentage,
+                                    seats: party.seats || 1, // Default to 1 if seats is not available
+                                    iconUrl: 'party-icon-url' // Replace with the actual URL or logic to get the icon URL
+                                });
+                            }).join(''); // Join the party cards for this division
+                        }).join('') : 'No data available'}
+                    </div>
                 </div>
             `;
         }
 
-        function createBottomSection() {
+        // call this when need to update the sidebar
+        function updateSidebar() {
+            const sidebar = document.querySelector('.sidebar');
+            sidebar.innerHTML = createSidebar();
+        }
+
+
+
+        
+        function createDivisionCard(district, data) {
+            return `
+                <div class="district-card-new" style="border: 1px solid #ccc; border-radius: 8px; width: 300px; margin: 10px; padding: 10px; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);">
+                    <div class="district-header-new" style="font-weight: bold; font-size: 16px; margin-bottom: 8px;">
+                        ${district} - ${data.pd_name}
+                    </div>
+                    <div class="party-results-container-new" style="max-height: 150px; overflow-y: auto; margin-bottom: 8px;">
+                        ${data.by_party.map(party => `
+                            <div class="party-row-new" style="margin-bottom: 6px;">
+                                <div class="party-info-new" style="display: flex; justify-content: space-between; align-items: center;">
+                                    <div class="party-details-new" style="flex: 1; font-size: 12px;">
+                                        <div class="party-name-new" style="font-weight: bold;">${party.party_name || 'Unknown Party'}</div>
+                                        <div class="candidate-name-new" style="color: #555;">${party.candidate || 'N/A'}</div>
+                                        <div class="vote-count-new">Votes: ${party.votes.toLocaleString() || '0'}</div>
+                                    </div>
+                                    <div class="party-progress-bar-new" style="width: 100px; margin-left: 10px;">
+                                        <div class="party-progress-bar-fill-new" style="width: ${party.percentage || 0}%; background-color: #4CAF50; height: 10px; border-radius: 5px;"></div>
+                                    </div>
+                                    <div class="percentage-new" style="width: 40px; text-align: right; font-weight: bold;">${party.percentage || 0}%</div>
+                                </div>
+                            </div>
+                        `).join('')}
+                    </div>
+                    
+                </div>
+            `;
+        }
+
+
+        function createBottomSection(resultArray) {
             return `
                 <div class="bottom-section">
-                    ${createDistrictCard('Hambantota District', parties)}
+                    ${resultArray.map(ob => createDivisionCard(ob.pd_name, ob)).join('')}
                 </div>
             `;
         }
 
-        function createLayout() {
+        function createLayout(resultArray) {
             return `
                 <div id="container">
                     ${createMainContent()}
                     ${createSidebar()}
-                    
-                    ${createBottomSection()}
+                    ${createBottomSection(resultArray)}
+                    ${console.log(createBottomSection(resultArray))}
                 </div>
             `;
         }
 
-        function createDistrictCard(district, parties) {
-            return `
-                <div class="district-card-new">
-                    <div class="district-header-new">
-                        ${district}
-                    </div>
-                    ${parties.map(party => `
-                        <div class="party-row-new">
-                            <img src="${party.iconUrl}" alt="${party.name} icon">
-                            <div class="party-info-new">
-                                <div class="party-details-new">
-                                    <div class="party-name-new">${party.name}</div>
-                                    <div class="vote-count-new">${party.voteCount.toLocaleString()}</div>
-                                </div>
-                                <div class="party-progress-bar-new">
-                                    <div class="party-progress-bar-fill-new" style="width: ${party.percentage}%; background-color: ${party.color};"></div>
-                                </div>
-                                <div class="percentage-new">${party.percentage}%</div>
-                            </div>
-                        </div>
-                    `).join('')}
-                    <div class="card-footer-new">
-                        <div class="footer-icon-new">➔</div> 
-                    </div>
-                </div>
-            `;
-        }
-
-        const parties = [
-            { name: 'SLPP', voteCount: 280881, percentage: 75.10, color: '#b71c1c', iconUrl: 'slpp-icon-url' },
-            { name: 'SJB', voteCount: 51758, percentage: 13.84, color: '#8bc34a', iconUrl: 'sjb-icon-url' },
-            { name: 'JJB', voteCount: 31362, percentage: 8.39, color: '#9c27b0', iconUrl: 'jjb-icon-url' },
-            { name: 'UNP', voteCount: 5017, percentage: 1.34, color: '#4caf50', iconUrl: 'unp-icon-url' },
-        ];
-
-        function generateRandomDataArray(size) {
-            const names = ['Alpha', 'Beta', 'Gamma', 'Delta', 'Epsilon', 'Zeta', 'Eta', 'Theta', 'Iota', 'Kappa'];
-            const colors = ['#8B0000', '#2F4F4F', '#4B0082', '#2C3E50', '#3B3B3B', '#556B2F', '#8B4513', '#483D8B', '#0B3D91', '#2E2E2E'];
-
-            const randomArray = [];
-
-            for (let i = 1; i <= size; i++) {
-                const randomName = `${names[Math.floor(Math.random() * names.length)]} ${Math.random() * names.length}`;
-                const randomColor = colors[Math.floor(Math.random() * colors.length)];
-
-                randomArray.push({
-                    id: `division-${i}`,
-                    name: randomName,
-                    color: randomColor
-                });
-            }
-
-            return randomArray;
-        }
-
-        function updateProvinceName(newName) {
-            const provinceElement = document.getElementById('provinceName');
-            if (provinceElement) {
-                provinceElement.innerHTML = `<h1>${newName}</h1>`;
-            }
-        }
-
+       
         fetch('./Division.json')
             .then(response => response.json())
             .then(data => {
@@ -397,6 +1333,45 @@
                 console.error('Error fetching the JSON file:', error);
             });
 
+        const parties = [
+            { name: 'SLPP', voteCount: 280881, percentage: 75.10, color: '#b71c1c', iconUrl: 'slpp-icon-url' },
+            { name: 'SJB', voteCount: 51758, percentage: 13.84, color: '#8bc34a', iconUrl: 'sjb-icon-url' },
+            { name: 'JJB', voteCount: 31362, percentage: 8.39, color: '#9c27b0', iconUrl: 'jjb-icon-url' },
+            { name: 'UNP', voteCount: 5017, percentage: 1.34, color: '#4caf50', iconUrl: 'unp-icon-url' },
+        ];
+
+        function generateRandomDataArray(size) {
+            fetch('./Division.json')
+                .then(response => response.json())
+                .then(data => {
+                    divisionArray = data;
+                })
+                .catch(error => {
+                    console.error('Error fetching the JSON file:', error);
+                });
+
+            const randomArray = [];
+
+            console.log(divisionArray);
+
+            for (let i = 1; i <= size; i++) {
+                randomArray.push({
+                    id: divisionArray[i - 1]["division-id"],
+                    name: divisionArray[i - 1]["division-name"],
+                    color: '#ffffff'
+                });
+            }
+            return randomArray;
+        }
+
+        function updateProvinceName(newName) {
+            const provinceElement = document.getElementById('provinceName');
+            if (provinceElement) {
+                provinceElement.innerHTML = `<h2>${newName}</h2>`;
+            }
+        }
+
+
         function getProvinceName(dataId) {
             const division = divisionArray.find(province => province["division-id"] === dataId);
             return division ? division["division-name"] : "Unknown Province";
@@ -404,7 +1379,7 @@
 
         document.addEventListener("DOMContentLoaded", function () {
             const app = document.getElementById('app');
-            app.innerHTML = createLayout();
+            app.innerHTML = createLayout(resultArray);
 
             const svg = document.getElementById('mapSvg');
             const floatingDiv = document.getElementById('floatingDiv');
@@ -432,7 +1407,7 @@
             const paths = document.querySelectorAll('svg path');
 
             // Example usage:
-            const dataArray = generateRandomDataArray(paths.length); // Generates an array with 5 objects
+            const dataArray = generateRandomDataArray(divisionArray.length); // Generates an array with 5 objects
 
 
 
@@ -478,6 +1453,7 @@
                 let mapper = dataArray.find(data => data.id === path.getAttribute('data-id'));
 
                 path.setAttribute('fill', mapper.color);
+                path.setAttribute('stroke', '#000');
 
                 path.addEventListener('mouseenter', function () {
                     this.setAttribute('opacity', 0.6);   // Change fill color on hover
