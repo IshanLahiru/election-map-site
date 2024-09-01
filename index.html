@@ -1168,6 +1168,89 @@
             "sequence_number": "0043"
         }];
 
+        function generateRandomVotes(parties) {
+            const votesData = {};
+            parties.forEach(party => {
+                // Random votes between 0 and 10000
+                votesData[party.party_code] = Math.floor(Math.random() * 10001);
+            });
+            return votesData;
+        }
+        
+        function generateRandomSummaryData() {
+            const electors = Math.floor(Math.random() * 100000) + 50000; // Random electors between 50,000 and 150,000
+            const polled = Math.floor(Math.random() * (electors + 1));  // Random polled votes between 0 and total electors
+            const valid = Math.floor(Math.random() * polled);           // Random valid votes between 0 and total polled
+            const rejected = polled - valid;                           // Rejected votes are the difference between polled and valid
+        
+            return {
+                valid: valid,
+                rejected: rejected,
+                polled: polled,
+                electors: electors,
+                type: "PRESIDENTIAL-FIRST",
+                sequence_number: "0043"
+            };
+        }
+        
+        function generateElectionData(pollingDivision, parties, votesData, summaryData) {
+            // If votesData is not provided, generate random votes
+            if (!votesData) {
+                votesData = generateRandomVotes(parties);
+            }
+        
+            // If summaryData is not provided, generate random summary data
+            if (!summaryData) {
+                summaryData = generateRandomSummaryData();
+            }
+        
+            // Helper function to calculate percentage
+            const calculatePercentage = (votes, total) => ((votes / total) * 100).toFixed(2);
+        
+            // Construct the `by_party` array by mapping over the parties
+            const byParty = parties.map(party => {
+                const votes = votesData[party.party_code] || 0;
+                const percentage = calculatePercentage(votes, summaryData.valid);
+        
+                return {
+                    party_code: party.party_code,
+                    votes: votes,
+                    percentage: percentage,
+                    party_name: party.Party_name,
+                    candidate: party.candidate
+                };
+            });
+        
+            // Construct the final election data structure
+            const electionData = {
+                timestamp: new Date().toISOString(),
+                level: "POLLING-DIVISION",
+                ed_code: pollingDivision["ed_code"] || "",
+                ed_name: pollingDivision["ed_name"] || "",
+                pd_code: pollingDivision["pd_code"] || "",
+                pd_name: pollingDivision["pd_name"] || "",
+                by_party: byParty,
+                summary: {
+                    valid: summaryData.valid || 0,
+                    rejected: summaryData.rejected || 0,
+                    polled: summaryData.polled || 0,
+                    electors: summaryData.electors || 0,
+                    percent_valid: calculatePercentage(summaryData.valid, summaryData.polled),
+                    percent_rejected: calculatePercentage(summaryData.rejected, summaryData.polled),
+                    percent_polled: calculatePercentage(summaryData.polled, summaryData.electors)
+                },
+                type: summaryData.type || "PRESIDENTIAL-FIRST",
+                sequence_number: summaryData.sequence_number || "0000"
+            };
+        
+            return electionData;
+        }
+        
+        // Generate election data without passing votesData and summaryData
+        //const result = generateElectionData(pollingDivision, parties);
+        //console.log(result);
+
+
         let theName = "Polling Results";
         // Main Content Component
         function createMainContent() {
