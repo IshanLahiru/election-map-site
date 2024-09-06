@@ -1,0 +1,733 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Responsive Web Layout</title>
+    <style>
+        /* Base styles */
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            background-color: #f0f2f5;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+        }
+
+        #container {
+            width: 90%;
+            max-width: 1200px;
+            margin: auto;
+            display: grid;
+            grid-template-columns: 2fr 2fr;
+            grid-template-rows: auto auto;
+            gap: 20px;
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+        }
+
+        .main-content {
+            grid-column: 1 / 2;
+            grid-row: 1 / 2;
+            background-color: #ffffff;
+            border: 1px solid #d1d1d1;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+        }
+
+        .sidebar {
+            grid-column: 2 / 3;
+            grid-row: 1 / 2;
+            background-color: #ffffff;
+            border: 1px solid #d1d1d1;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+
+        .bottom-section {
+            grid-template-columns: 2fr 2fr;
+            grid-template-rows: auto auto;
+            display: grid;
+            grid-column: 1 / 3;
+            grid-row: 2 / 3;
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+        }
+
+        .card {
+            display: block;
+            align-items: center;
+            justify-content: space-between;
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            padding: 10px;
+            margin-bottom: 10px;
+            width: 350px;
+            font-family: Arial, sans-serif;
+        }
+
+        .card img {
+            width: 30px;
+            height: 30px;
+            margin-right: 10px;
+        }
+
+        .card-content {
+            display: flex;
+            align-items: center;
+            width: 100%;
+        }
+
+        .party-info {
+            display: flex;
+            flex-direction: column;
+            margin-right: 10px;
+        }
+
+        .party-info .party-name {
+            font-weight: bold;
+        }
+
+        .party-info .vote-count {
+            font-size: 0.9em;
+            color: #555;
+        }
+
+        .progress-bar {
+            flex: 1;
+            background-color: #e0e0e0;
+            border-radius: 10px;
+            height: 10px;
+            margin: 0 10px;
+            position: relative;
+        }
+
+        .progress-bar-fill {
+            background-color: #b71c1c;
+            height: 100%;
+            border-radius: 10px;
+            position: absolute;
+            top: 0;
+            left: 0;
+        }
+
+        .percentage {
+            font-size: 0.9em;
+            color: #555;
+            margin-right: 10px;
+        }
+
+        .seat-count {
+            display: flex;
+            align-items: center;
+        }
+
+        .seat-count .seat-icon {
+            width: 15px;
+            height: 15px;
+            margin-right: 2px;
+        }
+
+        /**/
+        .district-card-new {
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            padding: 15px;
+            width: 90%;
+            font-family: Arial, sans-serif;
+        }
+
+        .district-header-new {
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+
+        .party-row-new {
+            display: flex;
+            align-items: center;
+            margin-bottom: 10px;
+        }
+
+        .party-row-new img {
+            width: 30px;
+            height: 30px;
+            margin-right: 10px;
+        }
+
+        .party-info-new {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            width: 100%;
+        }
+
+        .party-details-new {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .party-name-new {
+            font-weight: bold;
+            font-size: 0.9em;
+        }
+
+        .vote-count-new {
+            font-size: 0.85em;
+            color: #555;
+        }
+
+        .party-progress-bar-new {
+            flex: 1;
+            background-color: #e0e0e0;
+            border-radius: 10px;
+            height: 10px;
+            margin: 0 10px;
+            position: relative;
+        }
+
+        .party-progress-bar-fill-new {
+            height: 100%;
+            border-radius: 10px;
+            position: absolute;
+            top: 0;
+            left: 0;
+        }
+
+        .percentage-new {
+            font-size: 0.9em;
+            color: #555;
+            margin-right: 10px;
+        }
+
+        .card-footer-new {
+            display: flex;
+            justify-content: flex-end;
+            align-items: center;
+            margin-top: 15px;
+        }
+
+        .footer-icon-new {
+            font-size: 1.2em;
+        }
+
+        .results-container {
+            max-height: 700px;
+            /* Set a maximum height */
+            overflow-y: auto;
+            /* Enable vertical scrolling */
+            padding-right: 10px;
+            /* Optional: adds some padding to the right */
+        }
+
+        /* Responsive styles */
+        @media (max-width: 768px) {
+            #container {
+                grid-template-columns: 1fr;
+                grid-template-rows: auto auto auto;
+            }
+
+            .sidebar {
+                grid-column: 1 / 2;
+                grid-row: 2 / 3;
+                flex-direction: row;
+                gap: 10px;
+            }
+
+            .bottom-section {
+                grid-column: 1 / 2;
+                grid-row: 3 / 4;
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div id="app"></div>
+
+    <script>
+        let divisionArray = new Array();
+        let partyArray = new Array(); 
+        let resultArray = new Array();
+
+        function generateRandomVotes(parties) {
+            const votesData = {};
+            parties.forEach(party => {
+                // Random votes between 0 and 10000
+                votesData[party.party_code] = Math.floor(Math.random() * 10001);
+            });
+            return votesData;
+        }
+
+        let theName = "Polling Results";
+        // Main Content Component
+        function createMainContent() {
+            return `
+                <div class="main-content">
+                    //the svg file
+                    <div id="floatingDiv" style="position: absolute; display: none; background: rgba(0, 0, 0, 0.7); color: white; padding: 5px; border-radius: 4px;"></div>
+                </div>
+            `;
+        }
+
+        function provinceName() {
+            return `
+                <div id="provinceName">
+                    ${`<h2>${theName}</h2>`}
+                </div>
+            `;
+        }
+
+
+
+        function calculateCountrywideResults(divisions) {
+            const countrywideResults = [];
+
+            const result = {};
+
+            divisions.forEach(division => {
+                division.by_party.forEach(party => {
+                    if (!result[party.party_code]) {
+                        result[party.party_code] = {
+                            party_code: party.party_code,
+                            party_name: party.party_name,
+                            candidate: party.candidate,
+                            total_votes: 0
+                        };
+                    }
+                    result[party.party_code].total_votes += party.votes;
+                });
+            });
+            const totalVotes = Object.values(result).reduce((sum, party) => sum + party.total_votes, 0);
+            Object.keys(result).forEach(party_code => {
+                const party = result[party_code];
+                const percentage = ((party.total_votes / totalVotes) * 100).toFixed(2);
+
+                countrywideResults.push({
+                    party_code: party.party_code,
+                    party_name: party.party_name,
+                    candidate: party.candidate,
+                    votes: party.total_votes,
+                    percentage: percentage
+                });
+            });
+            return countrywideResults;
+        }
+
+        function theSidebarCard(ob) {
+            return `
+                <div class="card">
+                    <div class="card-content">
+                        <img src="${ob.iconUrl}" alt="${ob.name} icon">
+                        <div class="party-info">
+                            <div class="party-name">${ob.name}</div>
+                            <div class="vote-count">${ob.voteCount.toLocaleString()}</div>
+                        </div>
+                        <div class="progress-bar">
+                            <div class="progress-bar-fill" style="width: ${ob.percentage}%"></div>
+                        </div>
+                        <div class="percentage">${ob.percentage}%</div>
+                        <div class="seat-count">
+                            ${'🪑'.repeat(ob.seats)}
+                        </div>
+                    </div>
+                </div>
+            `;
+        }
+
+        function createSidebar(type) {
+            return `
+                <div class="sidebar" id="the-sidebar">
+                    <div class="sidebar-header">
+                        ${provinceName()}
+                    </div>
+                    <div class="results-container">
+                        ${type && type.by_party && type.by_party.length > 0 ? type.by_party.map(party => {
+                            return theSidebarCard({
+                                name: party.party_name,
+                                voteCount: party.votes,
+                                percentage: party.percentage,
+                                seats: party.seats || 1,
+                                iconUrl: 'party-icon-url'
+                            });
+                        }).join('') : 'No data available'}
+                    </div>
+                </div>
+            `;
+        }
+        function updateSideBar(result) {
+            const sidebar = document.getElementById('the-sidebar');
+            sidebar.innerHTML = createSidebar(result);
+        }
+
+        function createDivisionCard(district, data) {
+            return `
+                <div class="district-card-new" style="border: 1px solid #ccc; border-radius: 8px; width: 300px; margin: 10px; padding: 10px; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);">
+                    <div class="district-header-new" style="font-weight: bold; font-size: 16px; margin-bottom: 8px;">
+                        ${district} - ${data.pd_name}
+                    </div>
+                    <div class="party-results-container-new" style="max-height: 150px; overflow-y: auto; margin-bottom: 8px;">
+                        ${data.by_party.map(party => `
+                            <div class="party-row-new" style="margin-bottom: 6px;">
+                                <div class="party-info-new" style="display: flex; justify-content: space-between; align-items: center;">
+                                    <div class="party-details-new" style="flex: 1; font-size: 12px;">
+                                        <div class="party-name-new" style="font-weight: bold;">${party.party_name || 'Unknown Party'}</div>
+                                        <div class="candidate-name-new" style="color: #555;">${party.candidate || 'N/A'}</div>
+                                        <div class="vote-count-new">Votes: ${party.votes.toLocaleString() || '0'}</div>
+                                    </div>
+                                    <div class="party-progress-bar-new" style="width: 100px; margin-left: 10px;">
+                                        <div class="party-progress-bar-fill-new" style="width: ${party.percentage || 0}%; background-color: #4CAF50; height: 10px; border-radius: 5px;"></div>
+                                    </div>
+                                    <div class="percentage-new" style="width: 40px; text-align: right; font-weight: bold;">${party.percentage || 0}%</div>
+                                </div>
+                            </div>
+                        `).join('')}
+                    </div>
+                    
+                </div>
+            `;
+        }
+
+
+        function createBottomSection(resultArray) {
+            return `
+                <div class="bottom-section">
+                    ${resultArray.map(ob => createDivisionCard(ob.pd_name, ob)).join('')}
+                </div>
+            `;
+        }
+        function updateBottomSection(resultArray) {
+            const bottomSectionContainer = document.getElementById('bottom-section-container');
+            const bottomSectionHTML = createBottomSection(resultArray);
+            bottomSectionContainer.innerHTML = bottomSectionHTML; // Replace existing content
+        }
+
+        function createLayout(resultArray) {
+            return `
+                <div id="container">
+                    ${createMainContent()}
+                    ${createSidebar()}
+                    <div id="bottom-section-container" class="bottom-section">
+                        ${createBottomSection(resultArray)}
+                    </div>
+                </div>
+            `;
+        }
+
+        
+
+        function updateProvinceName(newName) {
+            const provinceElement = document.getElementById('provinceName');
+            if (provinceElement) {
+                provinceElement.innerHTML = `<h2>${newName}</h2>`;
+            }
+            //in here, update the logic to get and make the sidebar
+            const name = newName;
+            console.log(resultArray);
+            const resultnm = resultArray.filter(ob => ob.pd_name === name);
+            console.log(resultnm);
+            updateSideBar(resultnm[0]);
+        }
+
+
+        function getProvinceName(dataId) {
+            const division = divisionArray.find(province => province["division-id"] === dataId);
+            return division ? division["division-name"] : "Unknown Province";
+        }
+
+        // Function to fetch data from a JSON file
+        async function fetchData(fName) {
+            try {
+                const response = await fetch(fName);
+                if (!response.ok) {
+                    throw new Error('Network response was not ok ' + response.statusText);
+                }
+                const data = await response.json();
+                return data;
+            } catch (error) {
+                console.error('There has been a problem with your fetch operation:', error);
+            }
+        }
+
+        function getTheWonParty(partyRes) {
+            let heighest = null;
+            let max = 0;
+        
+            for (let i = 0; i < partyRes.length; i++) {
+                if (partyRes[i].percentage > max) {
+                    max = partyRes[i].percentage; // Update max with the current highest percentage
+                    heighest = partyRes[i]; // Update heighest to the current party with the highest percentage
+                }
+            }
+        
+            // Return the winning party object
+            return heighest ? partyArray.find(party => party.party_code === heighest.party_code) : null;
+        }
+        
+
+        
+
+        document.addEventListener("DOMContentLoaded",async function () {
+            
+
+            const divisionAr = await fetchData('./data/Division.json');
+            const partyAr = await fetchData('./data/Party.json');
+
+            for (let i = 0; i < divisionAr.length; i++) {
+                divisionArray.push(divisionAr[i]);
+            }
+            for (let i = 0; i < partyAr.length; i++) {
+                partyArray.push(partyAr[i]);
+            }
+
+            const app = document.getElementById('app');
+
+            app.innerHTML = createLayout(resultArray);
+
+            const svg = document.getElementById('mapSvg');
+            const floatingDiv = document.getElementById('floatingDiv');
+            let isCursorMoving = false;
+            let lastHoveredProvince = '';
+
+            svg.addEventListener('mousemove', (e) => {
+                // Make the floating div visible
+                floatingDiv.style.display = 'block';
+                // Move the floating div to follow the cursor
+                floatingDiv.style.left = `${e.pageX + 10}px`;
+                floatingDiv.style.top = `${e.pageY + 10}px`;
+
+                // Indicate that the cursor is moving
+                isCursorMoving = true;
+
+                // Reset the province name display if moving
+                floatingDiv.textContent = lastHoveredProvince ? lastHoveredProvince : '';
+
+                // Hide province name while cursor is moving
+                if (lastHoveredProvince) {
+                    floatingDiv.style.display = 'none';
+                }
+            });
+            const paths = document.querySelectorAll('svg path');
+
+            // Function to calculate the centroid of a path
+            function calculatePathCentroid(path) {
+                const length = path.getTotalLength();
+                const midpoint = length / 2;
+                const point = path.getPointAtLength(midpoint);
+
+                const boundingBox = path.getBBox();
+                const centerY = boundingBox.y + (boundingBox.height / 2);
+
+                return { x: point.x, y: centerY };
+            }
+
+            // Function to extract the number part from data-id
+            function extractNumber(dataId) {
+                const match = dataId.match(/\d+$/);
+                return match ? match[0] : '';
+            }
+
+            // Function to place the extracted number at the center of the path
+            function placeDataIdText(path) {
+                const dataId = path.getAttribute('data-id');
+                const numberPart = extractNumber(dataId);
+                const centroid = calculatePathCentroid(path);
+                const textElement = document.createElementNS("http://www.w3.org/2000/svg", "text");
+
+                textElement.setAttribute('x', centroid.x);
+                textElement.setAttribute('y', centroid.y);
+                textElement.setAttribute('text-anchor', 'middle');
+                textElement.setAttribute('font-size', '3');
+                textElement.setAttribute('dominant-baseline', 'middle');
+                textElement.textContent = numberPart;
+
+                path.parentNode.appendChild(textElement);
+            }
+
+
+            // Add hover effect to each path
+            paths.forEach(path => {
+                    path.setAttribute('fill', '#ffff');
+                    path.setAttribute('stroke', '#000');  
+
+                path.addEventListener('mouseenter', function () {
+                    isCursorMoving = true;
+                    this.setAttribute('opacity', 0.6);   // Change fill color on hover
+                    lastHoveredProvince = getProvinceName(path.getAttribute('data-id'));
+                    isCursorMoving = true;
+                });
+
+                path.addEventListener('mouseleave', function () {
+                    isCursorMoving = false;
+                    this.setAttribute('opacity', 1);
+                    isCursorMoving = false;    // Revert fill color when not hovering
+                });
+///
+///
+///
+///
+///
+///
+///
+///
+///
+                path.addEventListener('click', function () {
+                    theName = getProvinceName(path.getAttribute('data-id'));;
+                    updateProvinceName(theName);
+                });
+                setInterval(() => {
+                    if (!isCursorMoving && lastHoveredProvince) {
+                        floatingDiv.style.display = 'block';
+                    }
+                    isCursorMoving = false;
+                }, 300);
+            });
+
+            function generateElectionData(pollingDivision, parties, votesData, summaryData) {
+                // If summaryData is not provided, generate random summary data
+                if (!summaryData) {
+                    summaryData = generateRandomSummaryData();
+                }
+            
+                // Calculate random votes for each party
+                const totalVotes = summaryData.valid;
+                const randomVotes = generateRandomVotes(totalVotes, parties.length);
+            
+                // Helper function to calculate percentage
+                const calculatePercentage = (votes, total) => ((votes / total) * 100).toFixed(2);
+            
+                // Calculate percentages ensuring they add up to 100%
+                const byParty = parties.map((party, index) => {
+                    const votes = randomVotes[index];
+                    return {
+                        party_code: party.party_code,
+                        votes: votes,
+                        percentage: calculatePercentage(votes, totalVotes),
+                        party_name: party.Party_name,
+                        candidate: party.candidate
+                    };
+                });
+            
+                // Adjust percentages to ensure they sum to exactly 100%
+                let totalPercentage = byParty.reduce((sum, party) => sum + parseFloat(party.percentage), 0);
+                let difference = 100 - totalPercentage;
+                if (difference !== 0) {
+                    byParty[0].percentage = (parseFloat(byParty[0].percentage) + difference).toFixed(2);
+                }
+            
+                // Construct the final election data structure
+                const electionData = {
+                    timestamp: new Date().toISOString(),
+                    level: "POLLING-DIVISION",
+                    ed_code: pollingDivision["ed_code"] || "",
+                    ed_name: pollingDivision["ed_name"] || "",
+                    pd_code: pollingDivision["division-id"] || "",
+                    pd_name: pollingDivision["division-name"] || "",
+                    by_party: byParty,
+                    summary: {
+                        valid: summaryData.valid || 0,
+                        rejected: summaryData.rejected || 0,
+                        polled: summaryData.polled || 0,
+                        electors: summaryData.electors || 0,
+                        percent_valid: calculatePercentage(summaryData.valid, summaryData.polled),
+                        percent_rejected: calculatePercentage(summaryData.rejected, summaryData.polled),
+                        percent_polled: calculatePercentage(summaryData.polled, summaryData.electors)
+                    },
+                    type: summaryData.type || "PRESIDENTIAL-FIRST",
+                    sequence_number: summaryData.sequence_number || "0000"
+                };
+            
+                return electionData;
+            }
+            
+            // Function to generate random votes that sum up to totalVotes, ensuring one party has at least 20%
+            function generateRandomVotes(totalVotes, numParties) {
+                const votes = [];
+                let sum = 0;
+            
+                // Ensure the first party gets at least 20% of the total votes
+                const minVotesForWinner = Math.floor(totalVotes * 0.2);
+                const winnerVotes = Math.floor(Math.random() * (totalVotes - sum - (numParties - 1))) + minVotesForWinner;
+                votes.push(winnerVotes);
+                sum += winnerVotes;
+            
+                // Distribute remaining votes among the other parties
+                for (let i = 1; i < numParties - 1; i++) {
+                    const vote = Math.floor(Math.random() * (totalVotes - sum) / (numParties - i));
+                    votes.push(vote);
+                    sum += vote;
+                }
+            
+                votes.push(totalVotes - sum); // Ensure the total votes sum to totalVotes
+            
+                return votes;
+            }
+            
+            // Function to generate random summary data
+            function generateRandomSummaryData() {
+                const electors = Math.floor(Math.random() * 1000) + 1000;
+                const polled = Math.floor(Math.random() * electors);
+                const valid = Math.floor(Math.random() * polled);
+                const rejected = polled - valid;
+            
+                return {
+                    valid,
+                    rejected,
+                    polled,
+                    electors,
+                    type: "PRESIDENTIAL-FIRST",
+                    sequence_number: "0000"
+                };
+            }
+            let electionDa = generateElectionData(divisionArray, partyArray);
+            const rsArr = [];
+            divisionArray.forEach(division => {
+                const electionData = generateElectionData(division, partyArray);
+                rsArr.push(electionData);
+            });
+            rsArr.forEach(division => {
+                resultArray.push(division);
+            });
+
+            updateSideBar();
+            updateBottomSection(resultArray);
+            function updateMap() {
+                const paths = document.querySelectorAll('svg path');
+                for ( division of resultArray) {
+                //resultArray.forEach(division => {
+                    const wParty = getTheWonParty(division.by_party);
+    
+                    paths.forEach(path => {
+                        if (path.getAttribute('data-id') === division["pd_code"]) {
+                            const party = wParty
+                            const color = party ? party.color : '#gffff';
+                            path.setAttribute('fill', color);
+                        }
+                    });
+                };
+    
+            }
+            updateMap();
+
+        });
+
+        
+    </script>
+</body>
+
+</html>
