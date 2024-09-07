@@ -1,12 +1,11 @@
 import React, { useState } from 'react';
 
 const MapDistricts: React.FC = () => {
-  // State to hold fill and stroke colors for each path
   const [colors, setColors] = useState<{
     [key: string]: { fill: string; stroke: string };
   }>({});
 
-  // Event Handlers
+  
   const handleMouseEnter = (event: React.MouseEvent<SVGPathElement>) => {
     const dataId = event.currentTarget.getAttribute('data-id');
     event.currentTarget.setAttribute('opacity', '0.6');
@@ -24,9 +23,8 @@ const MapDistricts: React.FC = () => {
     console.log('Clicked on:', dataId);
   };
 
-  // Function to change color based on data-id
   const changeColor = (dataId: string, fill: string, stroke: string) => {
-    setColors((prev) => ({ ...prev, [dataId]: { fill, stroke } })); // Update colors state
+    setColors((prev) => ({ ...prev, [dataId]: { fill, stroke } })); 
   };
 
   return (
@@ -37,8 +35,8 @@ const MapDistricts: React.FC = () => {
       xmlns="http://www.w3.org/2000/svg"
       xmlnsXlink="http://www.w3.org/1999/xlink"
       style={{
-        overflow: 'hidden', // Set overflow to hidden
-        position: 'relative', // Set position to relative
+        overflow: 'hidden', 
+        position: 'relative', 
       }}
       viewBox="0 0 332.068 600"
       preserveAspectRatio="xMinYMin"
