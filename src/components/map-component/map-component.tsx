@@ -6,6 +6,7 @@ import { parse, stringify } from 'svgson';
 import { districtMap, divisionMap, pathExample } from './maps/dmap';
 import './style.css';
 import MapDistricts from './maps/map-districts';
+import MapDivision from './maps/map-divisions';
 
 const MapContent: React.FC = () => {
   const [districtsDivisionToggler, setDistrictsDivisionToggler] = useState(true);
@@ -73,16 +74,11 @@ const MapContent: React.FC = () => {
       {/* Conditionally render the appropriate map */}
       {districtsDivisionToggler ? (
         <div>
-          <MapDistricts/>
+          <MapDivision/>
         </div>
       ) : (
         <div>
-          <img
-            src={districtSvg}
-            alt="District Map"
-            onMouseMove={(e) => handleMouseMove(e, 'District Area')}
-            onMouseLeave={handleMouseLeave}
-          />
+          <MapDistricts/>
         </div>
       )}
 
