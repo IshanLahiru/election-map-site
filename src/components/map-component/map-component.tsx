@@ -34,21 +34,6 @@ const MapContent: React.FC = () => {
     setDistrictsDivisionToggler(type === 'division');
   };
 
-  // Handle mouse movement on the SVG areas
-  const handleMouseMove = (event: React.MouseEvent<HTMLImageElement, MouseEvent>, content: string) => {
-    setHoverInfo({
-      visible: true,
-      x: event.clientX,
-      y: event.clientY,
-      content,
-    });
-  };
-
-  // Handle mouse leave
-  const handleMouseLeave = () => {
-    setHoverInfo({ visible: false, x: 0, y: 0, content: '' });
-  };
-
   return (
     <div className="main-content">
       {/* Toggle buttons */}
