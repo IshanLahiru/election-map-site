@@ -1,0 +1,90 @@
+[
+  { 
+    "provinceId": "district-Anuradhapura", 
+    "provinceName": "Anuradhapura" 
+  },
+  { 
+    "provinceId": "district-Badulla", 
+    "provinceName": "Badulla" 
+  },
+  { 
+    "provinceId": "district-Batticaloa", 
+    "provinceName": "Batticaloa" 
+  },
+  { 
+    "provinceId": "district-Colombo", 
+    "provinceName": "Colombo" 
+  },
+  { 
+    "provinceId": "district-Digamadulla", 
+    "provinceName": "Digamadulla" 
+  },
+  { 
+    "provinceId": "district-Galle", 
+    "provinceName": "Galle" 
+  },
+  { 
+    "provinceId": "district-Gampaha", 
+    "provinceName": "Gampaha" 
+  },
+  { 
+    "provinceId": "district-Hambantota", 
+    "provinceName": "Hambantota" 
+  },
+  { 
+    "provinceId": "district-Jaffna", 
+    "provinceName": "Jaffna" 
+  },
+  { 
+    "provinceId": "district-Kalutara", 
+    "provinceName": "Kalutara"
+  },
+  { 
+    "provinceId": "district-Kegalle", 
+    "provinceName": "Kegalle"
+  },
+  { 
+    "provinceId": "district-Kurunegala", 
+    "provinceName": "Kurunegala"
+  },
+  { 
+    "provinceId": "district-Mahanuwara", 
+    "provinceName": "Mahanuwara"
+  },
+  { 
+    "provinceId": "district-Matale", 
+    "provinceName": "Matale"
+  },
+  { 
+    "provinceId": "district-Matara", 
+    "provinceName": "Matara"
+  },
+  { 
+    "provinceId": "district-Moneragala", 
+    "provinceName": "Moneragala"
+  },
+  { 
+    "provinceId": "district-NuwaraEliya", 
+    "provinceName": "NuwaraEliya"
+  },
+  { 
+    "provinceId": "district-Polonnaruwa", 
+    "provinceName": "Polonnaruwa"
+  },
+  { 
+    "provinceId": "district-Puttalam", 
+    "provinceName": "Puttalam"
+  },
+  { 
+    "provinceId": "district-Ratnapura", 
+    "provinceName": "Ratnapura"
+  },
+  { 
+    "provinceId": "district-Trincomalee", 
+    "provinceName": "Trincomalee"
+  },
+  { 
+    "provinceId": "district-Vanni", 
+    "provinceName": "Vanni"
+  }
+]
