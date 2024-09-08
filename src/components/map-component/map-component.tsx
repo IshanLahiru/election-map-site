@@ -1,11 +1,18 @@
-import React, { useState } from 'react';
+import React, { useContext, useState } from 'react';
 import './style.css';
 import MapDistricts from './maps/map-districts';
 import MapDivision from './maps/map-divisions';
+import { DataContext } from '../../contexts/data-context/data-context';
+import {
+  Division,
+  Province,
+} from '../../contexts/data-context/types/data-intarfaces';
 
 const MapContent: React.FC = () => {
   const [districtsDivisionToggler, setDistrictsDivisionToggler] =
     useState(true);
+  const { divisionArray, provinceArray, partyArray, resultArray } =
+    useContext(DataContext);
   const [hoverInfo, setHoverInfo] = useState({
     visible: false,
     x: 0,
@@ -21,12 +28,41 @@ const MapContent: React.FC = () => {
     const dataId = event.currentTarget.getAttribute('data-id');
     event.currentTarget.setAttribute('opacity', '0.6');
 
-    setHoverInfo({
-      visible: true,
-      x: event.clientX,
-      y: event.clientY,
-      content: `${dataId}`,
-    });
+    let matched;
+
+    if (districtsDivisionToggler) {
+      matched = divisionArray.find(
+        (division: Division) => division.divisionId === dataId
+      );
+
+      if (matched) {
+        setHoverInfo({
+          visible: true,
+          x: event.clientX,
+          y: event.clientY,
+          content: `${matched.divisionName}`,
+        });
+        console.log('Matched Division:', matched);
+      } else {
+        console.log('No matching division found for ID:', dataId);
+      }
+    } else {
+      matched = provinceArray.find(
+        (province: Province) => province.provinceId === dataId
+      );
+
+      if (matched) {
+        setHoverInfo({
+          visible: true,
+          x: event.clientX,
+          y: event.clientY,
+          content: `${matched.provinceName}`,
+        });
+        console.log('Matched Province:', matched);
+      } else {
+        console.log('No matching province found for ID:', dataId);
+      }
+    }
   };
 
   const handleMouseMove = (event: React.MouseEvent<HTMLDivElement>) => {
