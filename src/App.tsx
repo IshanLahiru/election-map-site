@@ -7,8 +7,8 @@ import './App.css';
 const App: React.FC = () => {
   return (
     <div>
-      <div id="container">
-        <MapContent />
+      <div className="main-container">
+        <MapContent/>
         <Sidebar />
         <div id="bottom-section-container" className="bottom-section">
           <BottomSection resultArray={[]} />
