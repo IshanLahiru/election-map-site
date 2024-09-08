@@ -1,25 +1,15 @@
-#container {
-  width: 90%;
-  max-width: 1200px;
+.main-container {
+  width: 80vw;
   margin: auto;
   display: grid;
-  grid-template-columns: 2fr 2fr;
+  grid-template-columns: 1.5fr 1fr;
   grid-template-rows: auto auto;
   gap: 20px;
   background-color: #fff;
   border-radius: 8px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   padding: 20px;
-}
-
-.main-content {
-  grid-column: 1 / 2;
-  grid-row: 1 / 2;
-  background-color: #ffffff;
-  border: 1px solid #d1d1d1;
-  padding: 20px;
-  border-radius: 8px;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+  height: 100vh;
 }
 
 .sidebar {
@@ -206,16 +196,12 @@
 
 .results-container {
   max-height: 700px;
-  /* Set a maximum height */
   overflow-y: auto;
-  /* Enable vertical scrolling */
   padding-right: 10px;
-  /* Optional: adds some padding to the right */
 }
 
-/* Responsive styles */
 @media (max-width: 768px) {
-  #container {
+  .main-container {
     grid-template-columns: 1fr;
     grid-template-rows: auto auto auto;
   }
