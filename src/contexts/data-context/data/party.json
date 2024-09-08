@@ -1,7 +1,7 @@
 [
   {
     "partyCode": "ACTC",
-    "PartyName": "All Ceylon Tamil Congress",
+    "partyName": "All Ceylon Tamil Congress",
     "candidate": "Mr. G.G.Ponnambalam",
     "image": "janadhipathiwaranaya.png",
     "symbol": "Bicycle",
@@ -9,7 +9,7 @@
   },
   {
     "partyCode": "AITM",
-    "PartyName": "Akhila Ilankai Tamil Mahasabha",
+    "partyName": "Akhila Ilankai Tamil Mahasabha",
     "candidate": "Mr. Thambiyappa Gopala Krishnan",
     "image": "janadhipathiwaranaya.png",
     "symbol": "Ship",
@@ -17,7 +17,7 @@
   },
   {
     "partyCode": "AJP",
-    "PartyName": "Ape Janabala Pakshaya",
+    "partyName": "Ape Janabala Pakshaya",
     "candidate": "Mr. Sanil Perera",
     "image": "janadhipathiwaranaya.png",
     "symbol": "Flag",
@@ -25,7 +25,7 @@
   },
   {
     "partyCode": "NIF",
-    "PartyName": "New Indipendent Front",
+    "partyName": "New Indipendent Front",
     "candidate": "Dr. Kapila Sapumal Badara Theminimulla",
     "image": "janadhipathiwaranaya.png",
     "symbol": "Till",
@@ -33,7 +33,7 @@
   },
   {
     "partyCode": "APA",
-    "PartyName": "Arunalu Peoples Alliance",
+    "partyName": "Arunalu Peoples Alliance",
     "candidate": "Mr. K. R. Krishan",
     "image": "janadhipathiwaranaya.png",
     "symbol": "Water Tap",
@@ -41,7 +41,7 @@
   },
   {
     "partyCode": "ACMC",
-    "PartyName": "All Ceylon Makkal Congress",
+    "partyName": "All Ceylon Makkal Congress",
     "candidate": "Mr. S. Subairdeen",
     "image": "janadhipathiwaranaya.png",
     "symbol": "Peacock",
@@ -49,7 +49,7 @@
   },
   {
     "partyCode": "ITAK",
-    "PartyName": "Ilankai Tamil Arasu Kadchi",
+    "partyName": "Ilankai Tamil Arasu Kadchi",
     "candidate": "Mr. P. Sathyalingam",
     "image": "janadhipathiwaranaya.png",
     "symbol": "House",
@@ -57,7 +57,7 @@
   },
   {
     "partyCode": "EDF",
-    "PartyName": "Eros Democratic Front",
+    "partyName": "Eros Democratic Front",
     "candidate": "Mr. Ramasami Rajenndran",
     "image": "janadhipathiwaranaya.png",
     "symbol": "MegaPhone",
@@ -65,7 +65,7 @@
   },
   {
     "partyCode": "EPDP",
-    "PartyName": "Eelam People's Democratic Party",
+    "partyName": "Eelam People's Democratic party",
     "candidate": "Mr. Douglas Devananda",
     "image": "janadhipathiwaranaya.png",
     "symbol": "Veena",
@@ -73,7 +73,7 @@
   },
   {
     "partyCode": "EPRLF",
-    "PartyName": "Eelam People's Revolutionary Liberation Front",
+    "partyName": "Eelam People's Revolutionary Liberation Front",
     "candidate": "Mr. N. Sivasakthi",
     "image": "janadhipathiwaranaya.png",
     "symbol": "Fish",
@@ -81,7 +81,7 @@
   },
   {
     "partyCode": "UCP",
-    "PartyName": "United Congress Party",
+    "partyName": "United Congress party",
     "candidate": "Mr. Govindasami Jayaseelan",
     "image": "janadhipathiwaranaya.png",
     "symbol": "Camel",
@@ -89,7 +89,7 @@
   },
   {
     "partyCode": "UNFF",
-    "PartyName": "United National Freedom Front",
+    "partyName": "United National Freedom Front",
     "candidate": "Mr. Maithri Gunarathne",
     "image": "janadhipathiwaranaya.png",
     "symbol": "Comb of Plantins",
@@ -97,7 +97,7 @@
   },
   {
     "partyCode": "UNP",
-    "PartyName": "United National Party",
+    "partyName": "United National party",
     "candidate": "Mr. Palitha Range Bandara",
     "image": "janadhipathiwaranaya.png",
     "symbol": "Elephant",
@@ -105,7 +105,7 @@
   },
   {
     "partyCode": "UNA",
-    "PartyName": "United National Alliance",
+    "partyName": "United National Alliance",
     "candidate": "Mr. Masihudeen Naeemullah",
     "image": "janadhipathiwaranaya.png",
     "symbol": "Pair of Scales",
@@ -113,7 +113,7 @@
   },
   {
     "partyCode": "DUA",
-    "PartyName": "Democratic Unity Alliance",
+    "partyName": "Democratic Unity Alliance",
     "candidate": "Mr. Z. M. Hidayatullah",
     "image": "janadhipathiwaranaya.png",
     "symbol": "Two Leaves",
@@ -121,7 +121,7 @@
   },
   {
     "partyCode": "UPP",
-    "PartyName": "United People's Party",
+    "partyName": "United People's party",
     "candidate": "Mr. Tiran Alan",
     "image": "janadhipathiwaranaya.png",
     "symbol": "Mobile Phone",
@@ -129,7 +129,7 @@
   },
   {
     "partyCode": "ULF",
-    "PartyName": "United Left Front",
+    "partyName": "United Left Front",
     "candidate": "Mr. Keerthi Kariyawasam",
     "image": "janadhipathiwaranaya.png",
     "symbol": "Canoe",
@@ -137,7 +137,7 @@
   },
   {
     "partyCode": "USP",
-    "PartyName": "United Socialist Party",
+    "partyName": "United Socialist party",
     "candidate": "Mr. Sirithunge Jayasuriya",
     "image": "janadhipathiwaranaya.png",
     "symbol": "Tri-shaw",
@@ -145,7 +145,7 @@
   },
   {
     "partyCode": "UPA",
-    "PartyName": "United Peace Alliance",
+    "partyName": "United Peace Alliance",
     "candidate": "Mr. M. T. Hassan Ali",
     "image": "janadhipathiwaranaya.png",
     "symbol": "Butterfly",
@@ -153,7 +153,7 @@
   },
   {
     "partyCode": "UPF",
-    "PartyName": "Up-Country People's Front",
+    "partyName": "Up-Country People's Front",
     "candidate": "Mr. S. Vijesandiran",
     "image": "janadhipathiwaranaya.png",
     "symbol": "Mammoty",
@@ -161,7 +161,7 @@
   },
   {
     "partyCode": "WNF",
-    "PartyName": "Workers National Front",
+    "partyName": "Workers National Front",
     "candidate": "Ms. Sawarimuttu Violet Mary (Actg.)",
     "image": "janadhipathiwaranaya.png",
     "symbol": "Sickle",
@@ -169,7 +169,7 @@
   },
   {
     "partyCode": "PLF",
-    "PartyName": "People's Liberation Front",
+    "partyName": "People's Liberation Front",
     "candidate": "M. Tilvin Silva",
     "image": "janadhipathiwaranaya.png",
     "symbol": "bell",
@@ -177,7 +177,7 @@
   },
   {
     "partyCode": "PSP",
-    "PartyName": "Peoples Servant's Party",
+    "partyName": "Peoples Servant's party",
     "candidate": "Mr. H. M. Nilantha Kumudu Herath",
     "image": "janadhipathiwaranaya.png",
     "symbol": "Guitar",
@@ -185,7 +185,7 @@
   },
   {
     "partyCode": "DTNA",
-    "PartyName": "Democratic Tamil National Alliance",
+    "partyName": "Democratic Tamil National Alliance",
     "candidate": "K. N. Rathnalinkham",
     "image": "janadhipathiwaranaya.png",
     "symbol": "Brass Lamp",
@@ -193,7 +193,7 @@
   },
   {
     "partyCode": "JSP",
-    "PartyName": "Jana Setha Peramuna",
+    "partyName": "Jana Setha Peramuna",
     "candidate": "Battaramulle Seelarathana Thero",
     "image": "janadhipathiwaranaya.png",
     "symbol": "Tractor",
@@ -201,7 +201,7 @@
   },
   {
     "partyCode": "NC",
-    "PartyName": "National Congress",
+    "partyName": "National Congress",
     "candidate": "Mr. A.. L. M. Athawulla",
     "image": "janadhipathiwaranaya.png",
     "symbol": "Horse",
@@ -209,7 +209,7 @@
   },
   {
     "partyCode": "JJB",
-    "PartyName": "Jathika Jana Balawegaya",
+    "partyName": "Jathika Jana Balawegaya",
     "candidate": "Mr. Hnihal Abesinghe",
     "image": "janadhipathiwaranaya.png",
     "symbol": "Compass",
@@ -217,7 +217,7 @@
   },
   {
     "partyCode": "NPP",
-    "PartyName": "National Peoples Party",
+    "partyName": "National Peoples party",
     "candidate": "Mr. A. S. M. Perera",
     "image": "janadhipathiwaranaya.png",
     "symbol": "Electric Bulb",
@@ -225,7 +225,7 @@
   },
   {
     "partyCode": "NFF",
-    "PartyName": "National Freedom Front",
+    "partyName": "National Freedom Front",
     "candidate": "Mr. P. A. Sarath Wijesiri",
     "image": "janadhipathiwaranaya.png",
     "symbol": "Panchaudaya",
@@ -233,7 +233,7 @@
   },
   {
     "partyCode": "NDF",
-    "PartyName": "National Democratic Front",
+    "partyName": "National Democratic Front",
     "candidate": "Mr. U. D. Gomitha Yasas Wijesiri",
     "image": "janadhipathiwaranaya.png",
     "symbol": "Motor car",
@@ -241,7 +241,7 @@
   },
   {
     "partyCode": "JSP",
-    "PartyName": "Jathika Sangawardhena Peramuna",
+    "partyName": "Jathika Sangawardhena Peramuna",
     "candidate": "Mr. A. H. Steven",
     "image": "janadhipathiwaranaya.png",
     "symbol": "Coconut",
@@ -249,7 +249,7 @@
   },
   {
     "partyCode": "NUA",
-    "PartyName": "National Unity Aliance",
+    "partyName": "National Unity Aliance",
     "candidate": "Mr. M. Azath S. Salley",
     "image": "janadhipathiwaranaya.png",
     "symbol": "Pigeon",
@@ -257,7 +257,7 @@
   },
   {
     "partyCode": "TMK",
-    "PartyName": "Thamizh Makkal Koottani",
+    "partyName": "Thamizh Makkal Koottani",
     "candidate": "Mr. C. V. Wigneshwaran",
     "image": "janadhipathiwaranaya.png",
     "symbol": "Deer",
@@ -265,7 +265,7 @@
   },
   {
     "partyCode": "TPA",
-    "PartyName": "Tamil Prograssive Alliance",
+    "partyName": "Tamil Prograssive Alliance",
     "candidate": "Mr. Mano Ganesan",
     "image": "janadhipathiwaranaya.png",
     "symbol": "Touch Light",
@@ -273,7 +273,7 @@
   },
   {
     "partyCode": "SDPOT",
-    "PartyName": "Social Democratic Party of Tamils",
+    "partyName": "Social Democratic party of Tamils",
     "candidate": "Mr. K. Sivarasa",
     "image": "janadhipathiwaranaya.png",
     "symbol": "Candle",
@@ -281,7 +281,7 @@
   },
   {
     "partyCode": "DP",
-    "PartyName": "Devana Parapura",
+    "partyName": "Devana Parapura",
     "candidate": "Mr. Uvindu Wijeweera",
     "image": "janadhipathiwaranaya.png",
     "symbol": "Pen",
@@ -289,7 +289,7 @@
   },
   {
     "partyCode": "PPP",
-    "PartyName": "Patriotic People's Power",
+    "partyName": "Patriotic People's Power",
     "candidate": "Mr. Sugath Hewapathirana",
     "image": "janadhipathiwaranaya.png",
     "symbol": "Rhinoceros",
@@ -297,7 +297,7 @@
   },
   {
     "partyCode": "DVJP",
-    "PartyName": "Desha Vimukthi Janatha Pakshaya",
+    "partyName": "Desha Vimukthi Janatha Pakshaya",
     "candidate": "Mr. D. Kalansuriya",
     "image": "janadhipathiwaranaya.png",
     "symbol": "Ear of paddy",
@@ -305,7 +305,7 @@
   },
   {
     "partyCode": "TELO",
-    "PartyName": "Tamil Eelam Liberation Organization",
+    "partyName": "Tamil Eelam Liberation Organization",
     "candidate": "Mr. Govindan Karunakaran",
     "image": "janadhipathiwaranaya.png",
     "symbol": "Light House",
@@ -313,7 +313,7 @@
   },
   {
     "partyCode": "TULF",
-    "PartyName": "Tamil United Liberation Front",
+    "partyName": "Tamil United Liberation Front",
     "candidate": "Mr. v. Anandasangaree",
     "image": "janadhipathiwaranaya.png",
     "symbol": "Sun",
@@ -321,7 +321,7 @@
   },
   {
     "partyCode": "NDF",
-    "PartyName": "New Democratic Front",
+    "partyName": "New Democratic Front",
     "candidate": "Mrs. Shyamila Perera",
     "image": "janadhipathiwaranaya.png",
     "symbol": "Swan",
@@ -329,7 +329,7 @@
   },
   {
     "partyCode": "NDMLP",
-    "PartyName": "New Democratic Marxist Leninist Party",
+    "partyName": "New Democratic Marxist Leninist party",
     "candidate": "Mr. Kasipillai Senthivalan",
     "image": "janadhipathiwaranaya.png",
     "symbol": "Kettle",
@@ -337,7 +337,7 @@
   },
   {
     "partyCode": "NLN",
-    "PartyName": "Nawa Lanka NidahasPakshaya",
+    "partyName": "Nawa Lanka NidahasPakshaya",
     "candidate": "Mr. Montague Sarach Chandra",
     "image": "janadhipathiwaranaya.png",
     "symbol": "Rabbit",
@@ -345,7 +345,7 @@
   },
   {
     "partyCode": "NSSP",
-    "PartyName": "Nawa Sama Samaja Party",
+    "partyName": "Nawa Sama Samaja party",
     "candidate": "Mr. Ranath Kumarasinghe",
     "image": "janadhipathiwaranaya.png",
     "symbol": "Table",
@@ -353,7 +353,7 @@
   },
   {
     "partyCode": "NSU",
-    "PartyName": "Nawa sihala urumaya",
+    "partyName": "Nawa sihala urumaya",
     "candidate": "Mr. Ranath Kumarasinghe",
     "image": "janadhipathiwaranaya.png",
     "symbol": "Bow and Arrow",
@@ -361,7 +361,7 @@
   },
   {
     "partyCode": "FPF",
-    "PartyName": "Freedom Peoples Front",
+    "partyName": "Freedom Peoples Front",
     "candidate": "Mr. Nalaka Godahewa",
     "image": "janadhipathiwaranaya.png",
     "symbol": "Helicopter",
@@ -369,7 +369,7 @@
   },
   {
     "partyCode": "PHU",
-    "PartyName": "Pivithuru Hela Urumaya",
+    "partyName": "Pivithuru Hela Urumaya",
     "candidate": "Mr. Nalaka Perera",
     "image": "janadhipathiwaranaya.png",
     "symbol": "Flower",
@@ -377,7 +377,7 @@
   },
   {
     "partyCode": "FSP",
-    "PartyName": "Frontline Socialist Party",
+    "partyName": "Frontline Socialist party",
     "candidate": "Mr. Kumr Gunaratnam",
     "image": "janadhipathiwaranaya.png",
     "symbol": "Sledge Hammer",
@@ -385,7 +385,7 @@
   },
   {
     "partyCode": "PA",
-    "PartyName": "People's Alliance",
+    "partyName": "People's Alliance",
     "candidate": "Mr. Lasantha Alagiyawanne",
     "image": "janadhipathiwaranaya.png",
     "symbol": "Chair",
@@ -393,7 +393,7 @@
   },
   {
     "partyCode": "DUNF",
-    "PartyName": "Democratic United National Front",
+    "partyName": "Democratic United National Front",
     "candidate": "Me. Ariyawansha Dissanayake",
     "image": "janadhipathiwaranaya.png",
     "symbol": "Eagle",
@@ -401,7 +401,7 @@
   },
   {
     "partyCode": "DPC",
-    "PartyName": "Democratic People Congress",
+    "partyName": "Democratic People Congress",
     "candidate": "Mr. Gangadaran Suresh",
     "image": "janadhipathiwaranaya.png",
     "symbol": "Post Box",
@@ -409,7 +409,7 @@
   },
   {
     "partyCode": "DPF",
-    "PartyName": "Demosratic Peoples Front",
+    "partyName": "Demosratic Peoples Front",
     "candidate": "Mr. K. T. Gurusamy",
     "image": "janadhipathiwaranaya.png",
     "symbol": "Ladder",
@@ -417,7 +417,7 @@
   },
   {
     "partyCode": "DPLF",
-    "PartyName": "Democratic People's Liberation Front",
+    "partyName": "Democratic People's Liberation Front",
     "candidate": "Mr. M. Pathmanathan",
     "image": "janadhipathiwaranaya.png",
     "symbol": "Nachor",
@@ -425,7 +425,7 @@
   },
   {
     "partyCode": "DNA",
-    "PartyName": "Democratic National Alliance",
+    "partyName": "Democratic National Alliance",
     "candidate": "Mr. Bandula de Alvise",
     "image": "janadhipathiwaranaya.png",
     "symbol": "Throphy",
@@ -433,7 +433,7 @@
   },
   {
     "partyCode": "DP",
-    "PartyName": "Democratic Party",
+    "partyName": "Democratic party",
     "candidate": "Mr. Gaya Basnayake",
     "image": "janadhipathiwaranaya.png",
     "symbol": "Flaming Torch",
@@ -441,7 +441,7 @@
   },
   {
     "partyCode": "DLF",
-    "PartyName": "Democratic Left Front",
+    "partyName": "Democratic Left Front",
     "candidate": "Me. Vasudewa Nanayakkara",
     "image": "janadhipathiwaranaya.png",
     "symbol": "Clock",
@@ -449,7 +449,7 @@
   },
   {
     "partyCode": "MJP",
-    "PartyName": "Maubima Janatha Pakshaya",
+    "partyName": "Maubima Janatha Pakshaya",
     "candidate": "Mr. Korala Gedara Ranjan Kumara Ranjan Senewirathna",
     "image": "janadhipathiwaranaya.png",
     "symbol": "Aeroplane",
@@ -457,7 +457,7 @@
   },
   {
     "partyCode": "MEP",
-    "PartyName": "Mahajana Eksath Peramuna",
+    "partyName": "Mahajana Eksath Peramuna",
     "candidate": "Mr. Thissa Jayawardhana Yapa",
     "image": "janadhipathiwaranaya.png",
     "symbol": "Cart Wheel",
@@ -465,7 +465,7 @@
   },
   {
     "partyCode": "NFFGG",
-    "PartyName": "National Front for Good Governance",
+    "partyName": "National Front for Good Governance",
     "candidate": "Mr. A. L. M. Sabeel",
     "image": "janadhipathiwaranaya.png",
     "symbol": "Double Flag",
@@ -473,7 +473,7 @@
   },
   {
     "partyCode": "CWC",
-    "PartyName": "Ceylonn Worker's Congress",
+    "partyName": "Ceylonn Worker's Congress",
     "candidate": "Mr. Jeewan Thondaman",
     "image": "janadhipathiwaranaya.png",
     "symbol": "Cockrel",
@@ -481,7 +481,7 @@
   },
   {
     "partyCode": "LSSP",
-    "PartyName": "Lanka Sama Samaja Party",
+    "partyName": "Lanka Sama Samaja party",
     "candidate": "Prof. Tissa Vitarana",
     "image": "janadhipathiwaranaya.png",
     "symbol": "Key",
@@ -489,7 +489,7 @@
   },
   {
     "partyCode": "TLDP",
-    "PartyName": "The Liberal Democratic Party",
+    "partyName": "The Liberal Democratic party",
     "candidate": "Mr. Amal A. Randeniya",
     "image": "janadhipathiwaranaya.png",
     "symbol": "Book",
@@ -497,7 +497,7 @@
   },
   {
     "partyCode": "SLLP",
-    "PartyName": "Sri Lanka Labour Party",
+    "partyName": "Sri Lanka Labour party",
     "candidate": "Mr. A. S. P Liyanage",
     "image": "janadhipathiwaranaya.png",
     "symbol": "Kangaroo",
@@ -505,7 +505,7 @@
   },
   {
     "partyCode": "SFP",
-    "PartyName": "Srilanka Freedom Party",
+    "partyName": "Srilanka Freedom party",
     "candidate": "",
     "image": "janadhipathiwaranaya.png",
     "symbol": "Hand",
@@ -513,7 +513,7 @@
   },
   {
     "partyCode": "SLPP",
-    "PartyName": "Sri Lanka Podujana Peramuna",
+    "partyName": "Sri Lanka Podujana Peramuna",
     "candidate": "Mr. Sagara Kariyawasam",
     "image": "janadhipathiwaranaya.png",
     "symbol": "Flower Bud",
@@ -521,7 +521,7 @@
   },
   {
     "partyCode": "SLMP",
-    "PartyName": "Sri Lanka Mahajana Pakshaya",
+    "partyName": "Sri Lanka Mahajana Pakshaya",
     "candidate": "Mr. Asanka Navarathne",
     "image": "janadhipathiwaranaya.png",
     "symbol": "Eye",
@@ -529,7 +529,7 @@
   },
   {
     "partyCode": "SLMC",
-    "PartyName": "Sri Lanka Muslim Congress",
+    "partyName": "Sri Lanka Muslim Congress",
     "candidate": "Mr. M. Nizam Kariyapper",
     "image": "janadhipathiwaranaya.png",
     "symbol": "Tree",
@@ -537,7 +537,7 @@
   },
   {
     "partyCode": "CPOSL",
-    "PartyName": "Communist Party of Sri Lanka",
+    "partyName": "Communist party of Sri Lanka",
     "candidate": "Mr. P. G. Rohan Pallewatta",
     "image": "janadhipathiwaranaya.png",
     "symbol": "Kite",
@@ -545,7 +545,7 @@
   },
   {
     "partyCode": "SPOSL",
-    "PartyName": "Socialist Party of Sri Lanka",
+    "partyName": "Socialist party of Sri Lanka",
     "candidate": "Mr. Mahinda Devage",
     "image": "janadhipathiwaranaya.png",
     "symbol": "Balloon",
@@ -553,7 +553,7 @@
   },
   {
     "partyCode": "SJB",
-    "PartyName": "Samagi Jana Balawegaya",
+    "partyName": "Samagi Jana Balawegaya",
     "candidate": "Mr. R. M. Ranjith Madduma Bandara",
     "image": "janadhipathiwaranaya.png",
     "symbol": "Telephone",
@@ -561,7 +561,7 @@
   },
   {
     "partyCode": "SP",
-    "PartyName": "Samabima Party",
+    "partyName": "Samabima party",
     "candidate": "Mr. M. Deepthi Kumara Gunarathna.",
     "image": "janadhipathiwaranaya.png",
     "symbol": "Envelop",
@@ -569,7 +569,7 @@
   },
   {
     "partyCode": "SPF",
-    "PartyName": "Socialist Peoples Forum",
+    "partyName": "Socialist Peoples Forum",
     "candidate": "Mr. Dharmasiri Lankapeli",
     "image": "janadhipathiwaranaya.png",
     "symbol": "Umbrella",
@@ -577,7 +577,7 @@
   },
   {
     "partyCode": "SEP",
-    "PartyName": "Socialist Equality Party",
+    "partyName": "Socialist Equality party",
     "candidate": "Mr. Deepal Jayasekara",
     "image": "janadhipathiwaranaya.png",
     "symbol": "Pair of Scissors",
@@ -585,7 +585,7 @@
   },
   {
     "partyCode": "SJP",
-    "PartyName": "Sinhaladeepa Jathika peramuna",
+    "partyName": "Sinhaladeepa Jathika peramuna",
     "candidate": "Mr. Jayantha liyanage",
     "image": "janadhipathiwaranaya.png",
     "symbol": "Sword",
