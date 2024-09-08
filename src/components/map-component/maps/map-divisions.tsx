@@ -1,46 +1,34 @@
 import React, { useState } from 'react';
-const MapDivision: React.FC = () => {
-  
+
+interface MapDivisionProps {
+  handleMouseEnter: (event: React.MouseEvent<SVGPathElement>) => void;
+  handleMouseLeave: (event: React.MouseEvent<SVGPathElement>) => void;
+  handleClick: (event: React.MouseEvent<SVGPathElement>) => void;
+}
+
+const MapDivision: React.FC<MapDivisionProps> = ({ handleMouseEnter, handleMouseLeave, handleClick }) => {
   const [colors, setColors] = useState<{
     [key: string]: { fill: string; stroke: string };
   }>({});
 
-  
-  const handleMouseEnter = (event: React.MouseEvent<SVGPathElement>) => {
-    const dataId = event.currentTarget.getAttribute('data-id');
-    event.currentTarget.setAttribute('opacity', '0.6');
-    console.log('Mouse entered:', dataId);
-  };
-
-  const handleMouseLeave = (event: React.MouseEvent<SVGPathElement>) => {
-    const dataId = event.currentTarget.getAttribute('data-id');
-    event.currentTarget.setAttribute('opacity', '1');
-    console.log('Mouse left:', dataId);
-  };
-
-  const handleClick = (event: React.MouseEvent<SVGPathElement>) => {
-    const dataId = event.currentTarget.getAttribute('data-id');
-    console.log('Clicked on:', dataId);
-  };
-
-  
-  const changeColor = (dataId: string, fill: string, stroke: string) => {
-    setColors((prev) => ({ ...prev, [dataId]: { fill, stroke } })); 
-  };
-
   return (
     <svg
-      height="431.18059444514716"
+      height="100%"
       version="1.1"
-      width="238.406"
+      width="100%"
       xmlns="http://www.w3.org/2000/svg"
       xmlnsXlink="http://www.w3.org/1999/xlink"
       style={{
-        overflow: 'hidden', 
-        position: 'relative', 
+        display: 'block',
+        width: '100%',
+        height: '75vh',
+        maxHeight: 'fit-content',
+        maxWidth: 'fit-content',
+        overflow: 'hidden',
+        position: 'relative',
       }}
       viewBox="0 0 332.034 600.516"
-      preserveAspectRatio="xMinYMin"
+      preserveAspectRatio="xMinYMin meet"
     >
       <desc style={{ WebkitTapHighlightColor: 'rgba(0, 0, 0, 0)' }}>
         Created with Raphaël 2.3.0 and Mapael undefined
