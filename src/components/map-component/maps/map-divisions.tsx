@@ -6,7 +6,7 @@ interface MapDivisionProps {
   handleClick: (event: React.MouseEvent<SVGPathElement>) => void;
 }
 
-const MapDivision: React.FC<MapDivisionProps> = ({ handleMouseEnter, handleMouseLeave, handleClick }) => {
+const MapDivision: React.FC<MapDivisionProps> = ({ handleMouseEnter, handleMouseLeave, handleClick, handleColor }) => {
   const [colors, setColors] = useState<{
     [key: string]: { fill: string; stroke: string };
   }>({});
