@@ -1,7 +1,12 @@
 export interface Division {
   divisionId: string;
   divisionName: string;
-}
+};
+
+export interface Province {
+  provinceId: string;
+  provinceName: string;
+};
 
 export interface Party {
   partyCode: string;
@@ -14,6 +19,7 @@ export interface Party {
 
 export interface DataContextType {
   divisionArray: Division[];
+  provinceArray: Province[];
   partyArray: Party[];
   resultArray: ElectionResult[];
 }
