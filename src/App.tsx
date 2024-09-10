@@ -4,11 +4,14 @@ import Sidebar from './components/sidebar/sidebar';
 import BottomSection from './components/bottom-section/bottom-section';
 import { DataProvider } from './contexts/data-context/data-context';
 import './App.css';
+import Header from './components/header/header';
+import Footer from './components/footer/footer';
 
 const App: React.FC = () => {
   return (
     <div>
       <DataProvider>
+        <Header />
         <div className="main-container">
           <MapContent />
           <Sidebar />
@@ -16,6 +19,7 @@ const App: React.FC = () => {
             <BottomSection resultArray={[]} />
           </div>
         </div>
+        <Footer />
       </DataProvider>
     </div>
   );
