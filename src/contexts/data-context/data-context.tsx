@@ -3,7 +3,8 @@ import React, { createContext, useEffect, useState, ReactNode } from 'react';
 import divisions from './data/division.json';
 import provinces from './data/province.json';
 import parties from './data/party.json';
-import electionResults from './data/result.json';
+import divisionElectionResults from './data/division_result.json';
+import provinceElectionResults from './data/province_result.json';
 import {
   DataContextType,
   Division,
@@ -19,33 +20,42 @@ export const DataContext = createContext<DataContextType | undefined>(
 export const DataProvider: React.FC<{ children: ReactNode }> = ({
   children,
 }) => {
-  const [divisionArray, setDivisionArray] = useState<Division[]>(divisions);
-  const [provinceArray, setProvinceArray] = useState<Province[]>(provinces);
-  const [partyArray, setPartyArray] = useState<Party[]>(parties);
-  const [resultArray, setResultArray] = useState<ElectionResult[]>([]);
-
-  // calculated states
-  //need to calculate the colors that should be in those divisions and provinces. so there should be 2 arrays with colors
-  // another array for sorted card layout to show on the side bar of that
+  const [divisionArray, setDivisionArray] = useState<Division[]>([]);
+  const [provinceArray, setProvinceArray] = useState<Province[]>([]);
+  const [partyArray, setPartyArray] = useState<Party[]>([]);
+  const [divisionResultArray, setDivisionResultArray] = useState<
+    ElectionResult[]
+  >([]);
+  const [provinceResultArray, setProvinceResultArray] = useState<
+    ElectionResult[]
+  >([]);
 
   useEffect(() => {
+    const sampleDataGenerator = {};
     const loadData = () => {
       setDivisionArray(divisions);
       setProvinceArray(provinces);
       setPartyArray(parties);
-      setResultArray(electionResults);
+      setProvinceResultArray(provinceElectionResults);
+      setDivisionResultArray(divisionElectionResults);
     };
 
     loadData();
 
     console.log(divisionArray);
     console.log(provinceArray);
-    
-    
   }, []);
 
   return (
-    <DataContext.Provider value={{ divisionArray, provinceArray, partyArray, resultArray }}>
+    <DataContext.Provider
+      value={{
+        divisionArray,
+        provinceArray,
+        partyArray,
+        divisionResultArray,
+        provinceResultArray,
+      }}
+    >
       {children}
     </DataContext.Provider>
   );
