@@ -1,10 +1,9 @@
-// DataContext.tsx
 import React, { createContext, useEffect, useState, ReactNode } from 'react';
 import divisions from './data/division.json';
 import provinces from './data/province.json';
 import parties from './data/party.json';
-import divisionElectionResults from './data/division_result.json';
-import provinceElectionResults from './data/province_result.json';
+// import divisionElectionResults from './data/division_result.json';
+// import provinceElectionResults from './data/province_result.json';
 import {
   DataContextType,
   Division,
@@ -12,6 +11,7 @@ import {
   Party,
   ElectionResult,
 } from './types/data-intarfaces';
+import { getPollingData, SampleDataPack } from './data/dataHelper';
 
 export const DataContext = createContext<DataContextType | undefined>(
   undefined
@@ -31,20 +31,33 @@ export const DataProvider: React.FC<{ children: ReactNode }> = ({
   >([]);
 
   useEffect(() => {
-    const sampleDataGenerator = {};
-    const loadData = () => {
+    const pollingData: SampleDataPack = getPollingData(parties, divisions, provinces, "PRESIDENTIAL-FIRST");
+    const loadData = (divisions:Division[], provinces:Province[], parties:Party[], pollingData:SampleDataPack) => {
       setDivisionArray(divisions);
       setProvinceArray(provinces);
       setPartyArray(parties);
-      setProvinceResultArray(provinceElectionResults);
-      setDivisionResultArray(divisionElectionResults);
+      setProvinceResultArray(pollingData.provinceResultArray);
+      setDivisionResultArray(pollingData.divisionResultArray);
     };
 
-    loadData();
-
-    console.log(divisionArray);
-    console.log(provinceArray);
+    loadData(divisions, provinces, parties, pollingData);
   }, []);
+
+  useEffect(() => {
+    console.log(divisionArray);
+  }, [divisionArray]);
+  useEffect(() => {
+    console.log(provinceArray);
+  }, [provinceArray]);
+  useEffect(() => {
+    console.log(partyArray);
+  }, [partyArray]);
+  useEffect(() => {
+    console.log(divisionResultArray);
+  }, [divisionResultArray]);
+  useEffect(() => {
+    console.log(provinceResultArray);
+  }, [provinceResultArray]);
 
   return (
     <DataContext.Provider
