@@ -25,7 +25,7 @@ export interface DataContextType {
   provinceResultArray: ElectionResult[];
 }
 
-interface PartyResult {
+export interface PartyResult {
   party_code: string;
   votes: number;
   percentage: string;
@@ -33,7 +33,7 @@ interface PartyResult {
   candidate: string;
 }
 
-interface Summary {
+export interface Summary {
   valid: number;
   rejected: number;
   polled: number;
