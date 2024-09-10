@@ -21,7 +21,8 @@ export interface DataContextType {
   divisionArray: Division[];
   provinceArray: Province[];
   partyArray: Party[];
-  resultArray: ElectionResult[];
+  divisionResultArray: ElectionResult[];
+  provinceResultArray: ElectionResult[];
 }
 
 interface PartyResult {
