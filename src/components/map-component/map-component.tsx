@@ -131,8 +131,8 @@ const MapContent: React.FC = () => {
         <div
           className="floating-div"
           style={{
-            left: hoverInfo.x - 130,
-            top: hoverInfo.y,
+            left: hoverInfo.x - 115,
+            top: hoverInfo.y - 115,
           }}
         >
           {hoverInfo.content}
