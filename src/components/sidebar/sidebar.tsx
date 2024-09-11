@@ -43,7 +43,7 @@ const isFullData = (data: FullData | PartialData): data is FullData => {
 };
 
 const Sidebar: React.FC<SidebarProps> = ({ type = sampleData }) => {
-  const [isIslandWide, setIsIslandWide] = useState(true); // Toggle between Island Wide and Division Wide
+  const [isIslandWide, setIsIslandWide] = useState(true);
 
   const currentData = isFullData(type)
     ? isIslandWide
