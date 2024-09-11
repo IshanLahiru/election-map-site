@@ -25,7 +25,7 @@ interface SidebarProps {
 // Sample data for both island-wide and division-wide results
 const sampleData: FullData = {
   island_wide: [
-    { party_name: 'Party A', votes: 1500, percentage: 45, seats: 3 },
+    { party_name: 'Party Aakdsfklasdj', votes: 1500, percentage: 45, seats: 3 },
     { party_name: 'Party B', votes: 1000, percentage: 30, seats: 2 },
     { party_name: 'Party C', votes: 500, percentage: 15, seats: 1 },
     { party_name: 'Party D', votes: 300, percentage: 10, seats: 1 },
@@ -65,7 +65,7 @@ const Sidebar: React.FC<SidebarProps> = ({ type = sampleData }) => {
                 name: party.party_name,
                 voteCount: party.votes,
                 percentage: party.percentage,
-                seats: party.seats || 0,
+                rank: party.seats || 0,
               }}
             />
           ))
