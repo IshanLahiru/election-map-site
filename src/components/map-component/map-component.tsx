@@ -11,7 +11,7 @@ import {
 const MapContent: React.FC = () => {
   const [districtsDivisionToggler, setDistrictsDivisionToggler] =
     useState(true);
-  const { divisionArray, provinceArray, partyArray, resultArray } =
+  const { divisionArray, provinceArray, partyArray } =
     useContext(DataContext);
   const [hoverInfo, setHoverInfo] = useState({
     visible: false,
@@ -131,8 +131,8 @@ const MapContent: React.FC = () => {
         <div
           className="floating-div"
           style={{
-            left: hoverInfo.x - 115,
-            top: hoverInfo.y - 115,
+            left: hoverInfo.x - (window.innerWidth * 0.11),
+            top: hoverInfo.y - (window.innerHeight * 0.1),
           }}
         >
           {hoverInfo.content}
