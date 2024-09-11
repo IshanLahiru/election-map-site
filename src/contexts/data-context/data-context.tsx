@@ -10,8 +10,14 @@ import {
   Province,
   Party,
   ElectionResult,
+  ColorData,
 } from './types/data-intarfaces';
-import { getPollingData, SampleDataPack } from './data/dataHelper';
+import {
+  calculateAllIslandResult,
+  getPollingData,
+  getWinningPartyColors,
+  SampleDataPack,
+} from './data/dataHelper';
 
 export const DataContext = createContext<DataContextType | undefined>(
   undefined
@@ -29,10 +35,23 @@ export const DataProvider: React.FC<{ children: ReactNode }> = ({
   const [provinceResultArray, setProvinceResultArray] = useState<
     ElectionResult[]
   >([]);
+  const [allIslandResult, setAllIslandResult] = useState<ElectionResult>();
+  const [divisionColorArray, setDivisionColorArray] = useState<ColorData[]>([]);
+  const [provinceColorArray, setProvinceColorArray] = useState<ColorData[]>([]);
 
   useEffect(() => {
-    const pollingData: SampleDataPack = getPollingData(parties, divisions, provinces, "PRESIDENTIAL-FIRST");
-    const loadData = (divisions:Division[], provinces:Province[], parties:Party[], pollingData:SampleDataPack) => {
+    const pollingData: SampleDataPack = getPollingData(
+      parties,
+      divisions,
+      provinces,
+      'PRESIDENTIAL-FIRST'
+    );
+    const loadData = (
+      divisions: Division[],
+      provinces: Province[],
+      parties: Party[],
+      pollingData: SampleDataPack
+    ) => {
       setDivisionArray(divisions);
       setProvinceArray(provinces);
       setPartyArray(parties);
@@ -44,20 +63,48 @@ export const DataProvider: React.FC<{ children: ReactNode }> = ({
   }, []);
 
   useEffect(() => {
-    console.log(divisionArray);
+    console.log('Division Array:', divisionArray);
   }, [divisionArray]);
+
   useEffect(() => {
-    console.log(provinceArray);
+    console.log('Province Array:', provinceArray);
   }, [provinceArray]);
+
   useEffect(() => {
-    console.log(partyArray);
+    console.log('Party Array:', partyArray);
   }, [partyArray]);
+
   useEffect(() => {
-    console.log(divisionResultArray);
-  }, [divisionResultArray]);
+    console.log('Division Result Array:', divisionResultArray);
+    const winningPartyColors = getWinningPartyColors(
+      divisionResultArray,
+      partyArray
+    );
+    console.log(
+      'Winning Party Colors according to the division party array:',
+      winningPartyColors
+    );
+    setDivisionColorArray(winningPartyColors);
+  }, [divisionResultArray, partyArray]);
+
   useEffect(() => {
-    console.log(provinceResultArray);
-  }, [provinceResultArray]);
+    console.log('Province Result Array:', provinceResultArray);
+    const allIslandResult = calculateAllIslandResult(
+      provinceResultArray,
+      partyArray
+    );
+    console.log('All Island Result:', allIslandResult);
+    setAllIslandResult(allIslandResult);
+    const winningPartyColors = getWinningPartyColors(
+      provinceResultArray,
+      partyArray
+    );
+    console.log(
+      'Winning Party Colors according to the division party array:',
+      winningPartyColors
+    );
+    setProvinceColorArray(winningPartyColors);
+  }, [provinceResultArray, partyArray]);
 
   return (
     <DataContext.Provider
@@ -67,6 +114,9 @@ export const DataProvider: React.FC<{ children: ReactNode }> = ({
         partyArray,
         divisionResultArray,
         provinceResultArray,
+        allIslandResult,
+        divisionColorArray,
+        provinceColorArray,
       }}
     >
       {children}
