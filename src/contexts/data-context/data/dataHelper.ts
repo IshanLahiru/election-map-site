@@ -4,6 +4,7 @@ import {
   Division,
   Province,
   PartyResult,
+  ColorData,
 } from '../types/data-intarfaces';
 
 export interface SampleDataPack {
@@ -51,19 +52,27 @@ const generatePartyResults = (
   const results: PartyResult[] = [];
   let remainingVotes = totalVotes;
 
-  partyList.forEach((party) => {
-    const votes = getRandomNumber(1, remainingVotes);
-    remainingVotes -= votes;
-    const percentage = ((votes / totalVotes) * 100).toFixed(2);
+  const shuffledPartyList = [...partyList].sort(() => Math.random() - 0.5);
+
+  shuffledPartyList.forEach((party, index) => {
+    const maxVotesForParty =
+      index === shuffledPartyList.length - 1
+        ? remainingVotes
+        : getRandomNumber(1, Math.floor(remainingVotes / 2));
+
+    remainingVotes -= maxVotesForParty;
+    const percentage = ((maxVotesForParty / totalVotes) * 100).toFixed(2);
 
     results.push({
       party_code: party.partyCode,
-      votes,
+      votes: maxVotesForParty,
       percentage,
       party_name: party.partyName,
       candidate: party.candidate,
     });
   });
+
+  results.sort((a, b) => b.votes - a.votes);
 
   return results;
 };
@@ -141,4 +150,89 @@ export const getPollingData = (
     divisionResultArray,
     provinceResultArray,
   };
+};
+
+export const calculateAllIslandResult = (
+  divisionResultArray: ElectionResult[],
+  partyList: Party[]
+): ElectionResult => {
+  let totalElectors = 0;
+  let totalPolled = 0;
+  let totalValid = 0;
+  let totalRejected = 0;
+
+  const partyVoteMap: { [key: string]: number } = {};
+
+  partyList.forEach((party) => {
+    partyVoteMap[party.partyCode] = 0;
+  });
+
+  divisionResultArray.forEach((result) => {
+    totalElectors += result.summary.electors;
+    totalPolled += result.summary.polled;
+    totalValid += result.summary.valid;
+    totalRejected += result.summary.rejected;
+
+    result.by_party.forEach((partyResult) => {
+      partyVoteMap[partyResult.party_code] += partyResult.votes;
+    });
+  });
+
+  const allIslandPartyResults: PartyResult[] = partyList.map((party) => {
+    const votes = partyVoteMap[party.partyCode];
+    const percentage = ((votes / totalPolled) * 100).toFixed(2);
+
+    return {
+      party_code: party.partyCode,
+      votes,
+      percentage,
+      party_name: party.partyName,
+      candidate: party.candidate,
+    };
+  });
+
+  allIslandPartyResults.sort((a, b) => b.votes - a.votes);
+
+  const allIslandResult: ElectionResult = {
+    timestamp: new Date().toISOString(),
+    level: 'ALL_ISLAND',
+    ed_code: 'ALL_ISLAND',
+    ed_name: 'All Island',
+    pd_code: 'ALL_ISLAND',
+    pd_name: 'All Island',
+    by_party: allIslandPartyResults,
+    summary: {
+      electors: totalElectors,
+      polled: totalPolled,
+      valid: totalValid,
+      rejected: totalRejected,
+      percent_valid: ((totalValid / totalPolled) * 100).toFixed(2),
+      percent_rejected: ((totalRejected / totalPolled) * 100).toFixed(2),
+      percent_polled: ((totalPolled / totalElectors) * 100).toFixed(2),
+    },
+    type: 'ELECTION_TYPE',
+    sequence_number: '1',
+  };
+
+  return allIslandResult;
+};
+
+export const getWinningPartyColors = (
+  resultArray: ElectionResult[],
+  partyArray: Party[]
+): ColorData[] => {
+  return resultArray.map((result) => {
+    const winningPartyResult = result.by_party.reduce((prev, current) =>
+      current.votes > prev.votes ? current : prev
+    );
+
+    const winningParty = partyArray.find(
+      (party) => party.partyCode === winningPartyResult.party_code
+    );
+
+    return {
+      id: result.ed_code,
+      color: winningParty ? winningParty.color : '#000000',
+    };
+  });
 };
