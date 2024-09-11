@@ -1,12 +1,12 @@
 export interface Division {
   divisionId: string;
   divisionName: string;
-};
+}
 
 export interface Province {
   provinceId: string;
   provinceName: string;
-};
+}
 
 export interface Party {
   partyCode: string;
@@ -23,6 +23,9 @@ export interface DataContextType {
   partyArray: Party[];
   divisionResultArray: ElectionResult[];
   provinceResultArray: ElectionResult[];
+  allIslandResult: ElectionResult | undefined;
+  divisionColorArray: ColorData[];
+  provinceColorArray: ColorData[];
 }
 
 export interface PartyResult {
@@ -54,4 +57,9 @@ export interface ElectionResult {
   summary: Summary;
   type: string;
   sequence_number: string;
+}
+
+export interface ColorData {
+  id: string;
+  color: string;
 }
