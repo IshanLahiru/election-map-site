@@ -6,6 +6,7 @@ import { DataContext } from '../../contexts/data-context/data-context';
 import Modal from '../result-modal/result-modal';
 import {
   Division,
+  ElectionResult,
   Province,
 } from '../../contexts/data-context/types/data-intarfaces';
 
@@ -46,7 +47,15 @@ const MapContent: React.FC = () => {
     partyArray,
     divisionColorArray,
     provinceColorArray,
-  } = useContext(DataContext);
+    divisionResultArray,
+    provinceResultArray,
+  } = useContext(DataContext)|| {
+    divisionArray: [],
+    provinceArray: [],
+    partyArray: [],
+    divisionColorArray: [],
+    provinceColorArray: [],
+  };
   const [hoverInfo, setHoverInfo] = useState({
     visible: false,
     x: 0,
@@ -55,6 +64,7 @@ const MapContent: React.FC = () => {
   });
   const [isModalVisible, setIsModalVisible] = useState(false);
   const [modalTitle, setModalTitle] = useState('');
+  const [result, setResult] = useState<ElectionResult>();
 
   const closeModal = () => {
     setIsModalVisible(false);
@@ -62,6 +72,14 @@ const MapContent: React.FC = () => {
 
   const handleToggle = (type: 'district' | 'division') => {
     setDistrictsDivisionToggler(type === 'division');
+  };
+
+  const getPartyResultByPartyCode = (electionResults: ElectionResult[], partyCode: string): ElectionResult | undefined => {
+      const partyResult = electionResults.find(party => party.ed_code === partyCode);
+      if (partyResult) {
+        return partyResult;
+      }
+    return undefined;
   };
 
   const handleMouseEnter = (event: React.MouseEvent<SVGPathElement>) => {
@@ -116,7 +134,6 @@ const MapContent: React.FC = () => {
   };
 
   const handleMouseLeave = (event: React.MouseEvent<SVGPathElement>) => {
-    const dataId = event.currentTarget.getAttribute('data-id');
     event.currentTarget.setAttribute('opacity', '1');
     setHoverInfo((prev) => ({ ...prev, visible: false }));
   };
@@ -124,7 +141,7 @@ const MapContent: React.FC = () => {
   const handleClick = (event: React.MouseEvent<SVGPathElement>) => {
     const dataId = event.currentTarget.getAttribute('data-id');
     setIsModalVisible(true);
-    console.log('Clicked on:', dataId);
+    
 
     let matched;
 
@@ -132,9 +149,17 @@ const MapContent: React.FC = () => {
       matched = divisionArray.find(
         (division: Division) => division.divisionId === dataId
       );
+      console.log('Matched Division:', matched);
+      console.log('Division Result Array:', divisionResultArray);
+      console.log('Clicked on:', dataId);
 
       if (matched) {
         setModalTitle(`${matched.divisionName} Division`);
+        if (divisionResultArray){
+          const result = getPartyResultByPartyCode(divisionResultArray, matched.divisionId);
+          setResult(result);
+          console.log('Result is by the adnshfjkahsdlfjalskdhq :', result);
+        }
       } else {
         console.log('No matching division found for ID:', dataId);
       }
@@ -145,14 +170,15 @@ const MapContent: React.FC = () => {
 
       if (matched) {
         setModalTitle(`${matched.provinceName} Province`);
+        if (provinceResultArray){
+          const result = getPartyResultByPartyCode(provinceResultArray, matched.provinceId);
+          setResult(result);
+          console.log('Result is by the adnshfjkahsdlfjalskdhq :', result);
+        }
       } else {
         console.log('No matching province found for ID:', dataId);
       }
     }
-  };
-
-  const changeColor = (dataId: string, fill: string, stroke: string) => {
-    // Add logic to change color if needed
   };
 
   return (
@@ -197,7 +223,7 @@ const MapContent: React.FC = () => {
         isVisible={isModalVisible}
         onClose={closeModal}
         title={modalTitle}
-        dta={sampleData}
+        dta={result}
       ></Modal>
 
       {hoverInfo.visible && (
