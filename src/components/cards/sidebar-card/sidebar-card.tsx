@@ -8,6 +8,7 @@ interface SidebarCardProps {
     voteCount: number;
     percentage: number;
     rank: number;
+    color: string;
   };
 }
 
@@ -15,13 +16,13 @@ const SidebarCard: React.FC<SidebarCardProps> = ({ ob }) => {
   return (
     <div className="card futuristic-card">
       <div className="party-logo">
-        <img src={ob.iconUrl} alt={`1`} />
+        <img src={ob.iconUrl} alt={`1`} style={{backgroundColor: `${ob.color}` }} />
       </div>
       <div className="dtlSection">
         <div className='party-name'>{ob.name}</div>
         <div className='progressbarPart'>
             <div className='progress-bar'>
-            <div className="progress-bar-fill" style={{ width: `${ob.percentage}%` }}></div>
+            <div className="progress-bar-fill" style={{ width: `${ob.percentage}%`, backgroundColor: `${ob.color}`  }}></div>
             </div>
 
         </div>
