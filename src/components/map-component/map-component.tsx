@@ -40,7 +40,13 @@ const sampleData: FullData = {
 const MapContent: React.FC = () => {
   const [districtsDivisionToggler, setDistrictsDivisionToggler] =
     useState(true);
-  const { divisionArray, provinceArray, partyArray } = useContext(DataContext);
+  const {
+    divisionArray,
+    provinceArray,
+    partyArray,
+    divisionColorArray,
+    provinceColorArray,
+  } = useContext(DataContext);
   const [hoverInfo, setHoverInfo] = useState({
     visible: false,
     x: 0,
@@ -61,7 +67,6 @@ const MapContent: React.FC = () => {
   const handleMouseEnter = (event: React.MouseEvent<SVGPathElement>) => {
     const dataId = event.currentTarget.getAttribute('data-id');
     event.currentTarget.setAttribute('opacity', '0.6');
-    event.currentTarget.setAttribute('fill', 'black');
 
     let matched;
 
@@ -113,7 +118,6 @@ const MapContent: React.FC = () => {
   const handleMouseLeave = (event: React.MouseEvent<SVGPathElement>) => {
     const dataId = event.currentTarget.getAttribute('data-id');
     event.currentTarget.setAttribute('opacity', '1');
-    event.currentTarget.setAttribute('fill', 'white');
     setHoverInfo((prev) => ({ ...prev, visible: false }));
   };
 
@@ -178,12 +182,14 @@ const MapContent: React.FC = () => {
             handleMouseEnter={handleMouseEnter}
             handleMouseLeave={handleMouseLeave}
             handleClick={handleClick}
+            colors={divisionColorArray}
           />
         ) : (
           <MapDistricts
             handleMouseEnter={handleMouseEnter}
             handleMouseLeave={handleMouseLeave}
             handleClick={handleClick}
+            colors={provinceColorArray}
           />
         )}
       </div>
