@@ -193,6 +193,27 @@ export const calculateAllIslandResult = (
 
   allIslandPartyResults.sort((a, b) => b.votes - a.votes);
 
+  const top4Parties = allIslandPartyResults.slice(0, 4);
+
+  const otherParties = allIslandPartyResults.slice(4);
+
+  if (otherParties.length > 0) {
+    const totalOtherVotes = otherParties.reduce(
+      (sum, party) => sum + party.votes,
+      0
+    );
+    const otherPercentage = ((totalOtherVotes / totalPolled) * 100).toFixed(2);
+
+    const otherPartyResult: PartyResult = {
+      party_code: 'OTHERS',
+      votes: totalOtherVotes,
+      percentage: otherPercentage,
+      party_name: 'Other Parties',
+      candidate: 'N/A',
+    };
+    top4Parties.push(otherPartyResult);
+  }
+
   const allIslandResult: ElectionResult = {
     timestamp: new Date().toISOString(),
     level: 'ALL_ISLAND',
@@ -200,7 +221,7 @@ export const calculateAllIslandResult = (
     ed_name: 'All Island',
     pd_code: 'ALL_ISLAND',
     pd_name: 'All Island',
-    by_party: allIslandPartyResults,
+    by_party: top4Parties,
     summary: {
       electors: totalElectors,
       polled: totalPolled,
