@@ -20,18 +20,20 @@ const MapDistricts: React.FC<MapDivisionProps> = ({
   }, [colors]);
 
   const getColorById = (id: string, ar: ColorData[] | undefined): string => {
-    if (!colorsArray) {
+    if (!ar) {
       return '#ffffff';
     }
-    const colorData = colorsArray.find((color) => color.id === id);
+    const colorData = ar.find((color) => color.id === id);
+    console.log('Color Data:', ar, ar[1]);
+    
     return colorData ? colorData.color : '#ffffff';
   };
 
   const getStrokeById = (id: string, ar: ColorData[] | undefined): string => {
-    if (!colorsArray) {
+    if (!ar) {
       return '#000000';
     }
-    const colorData = colorsArray.find((color) => color.id === id);
+    const colorData = ar.find((color) => color.id === id);
     return colorData ? '#ffffff' : '#000000';
   };
 
