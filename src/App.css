@@ -39,7 +39,7 @@
 
   .sidebar {
     grid-column: 1 / 2;
-    flex-direction: row;
+    flex-direction: column;
     gap: 10px;
   }
 
