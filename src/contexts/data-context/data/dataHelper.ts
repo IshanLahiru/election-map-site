@@ -6,6 +6,8 @@ import {
   PartyResult,
   ColorData,
 } from '../types/data-intarfaces';
+import divisionElectionResults from '../data/division_result.json';
+import provinceElectionResults from '../data/province_result.json';
 
 export interface SampleDataPack {
   divisionResultArray: ElectionResult[];
@@ -146,9 +148,16 @@ export const getPollingData = (
     provinceResultArray.push(provinceResult);
   });
 
+
+
+  // return {
+  //   divisionResultArray,
+  //   provinceResultArray,
+  // };
+
   return {
-    divisionResultArray,
-    provinceResultArray,
+    divisionResultArray: divisionElectionResults,
+    provinceResultArray: provinceElectionResults,
   };
 };
 
