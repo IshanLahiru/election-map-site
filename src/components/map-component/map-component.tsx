@@ -1,4 +1,4 @@
-import React, { useContext, useState } from 'react';
+import React, { useContext, useEffect, useState } from 'react';
 import './style.css';
 import MapDistricts from './maps/map-districts';
 import MapDivision from './maps/map-divisions';
@@ -100,7 +100,6 @@ const MapContent: React.FC = () => {
           y: event.clientY,
           content: `${matched.divisionName}`,
         });
-        console.log('Matched Division:', matched);
       } else {
         console.log('No matching division found for ID:', dataId);
       }
@@ -116,7 +115,6 @@ const MapContent: React.FC = () => {
           y: event.clientY,
           content: `${matched.provinceName}`,
         });
-        console.log('Matched Province:', matched);
       } else {
         console.log('No matching province found for ID:', dataId);
       }
@@ -149,16 +147,11 @@ const MapContent: React.FC = () => {
       matched = divisionArray.find(
         (division: Division) => division.divisionId === dataId
       );
-      console.log('Matched Division:', matched);
-      console.log('Division Result Array:', divisionResultArray);
-      console.log('Clicked on:', dataId);
-
       if (matched) {
         setModalTitle(`${matched.divisionName} Division`);
         if (divisionResultArray){
           const result = getPartyResultByPartyCode(divisionResultArray, matched.divisionId);
           setResult(result);
-          console.log('Result is by the adnshfjkahsdlfjalskdhq :', result);
         }
       } else {
         console.log('No matching division found for ID:', dataId);
@@ -173,7 +166,6 @@ const MapContent: React.FC = () => {
         if (provinceResultArray){
           const result = getPartyResultByPartyCode(provinceResultArray, matched.provinceId);
           setResult(result);
-          console.log('Result is by the adnshfjkahsdlfjalskdhq :', result);
         }
       } else {
         console.log('No matching province found for ID:', dataId);
@@ -219,12 +211,15 @@ const MapContent: React.FC = () => {
           />
         )}
       </div>
-      <Modal
-        isVisible={isModalVisible}
-        onClose={closeModal}
-        title={modalTitle}
-        dta={result}
-      ></Modal>
+      {result !== undefined ? (
+        <Modal
+          isVisible={isModalVisible}
+          onClose={closeModal}
+          title={modalTitle}
+          dta={result}
+        />
+      ) : null}
+      
 
       {hoverInfo.visible && (
         <div
