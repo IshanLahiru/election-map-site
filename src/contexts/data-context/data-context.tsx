@@ -2,8 +2,6 @@ import React, { createContext, useEffect, useState, ReactNode } from 'react';
 import divisions from './data/division.json';
 import provinces from './data/province.json';
 import parties from './data/party.json';
-// import divisionElectionResults from './data/division_result.json';
-// import provinceElectionResults from './data/province_result.json';
 import {
   DataContextType,
   Division,
@@ -57,51 +55,30 @@ export const DataProvider: React.FC<{ children: ReactNode }> = ({
       setPartyArray(parties);
       setProvinceResultArray(pollingData.provinceResultArray);
       setDivisionResultArray(pollingData.divisionResultArray);
+      // setProvinceResultArray(divisionElectionResults);
+      // setDivisionResultArray(provinceElectionResults);
     };
 
     loadData(divisions, provinces, parties, pollingData);
   }, []);
 
   useEffect(() => {
-    console.log('Division Array:', divisionArray);
-  }, [divisionArray]);
-
-  useEffect(() => {
-    console.log('Province Array:', provinceArray);
-  }, [provinceArray]);
-
-  useEffect(() => {
-    console.log('Party Array:', partyArray);
-  }, [partyArray]);
-
-  useEffect(() => {
-    console.log('Division Result Array:', divisionResultArray);
     const winningPartyColors = getWinningPartyColors(
       divisionResultArray,
       partyArray
-    );
-    console.log(
-      'Winning Party Colors according to the division party array:',
-      winningPartyColors
     );
     setDivisionColorArray(winningPartyColors);
   }, [divisionResultArray, partyArray]);
 
   useEffect(() => {
-    console.log('Province Result Array:', provinceResultArray);
     const allIslandResult = calculateAllIslandResult(
       provinceResultArray,
       partyArray
     );
-    console.log('All Island Result:', allIslandResult);
     setAllIslandResult(allIslandResult);
     const winningPartyColors = getWinningPartyColors(
       provinceResultArray,
       partyArray
-    );
-    console.log(
-      'Winning Party Colors according to the division party array:',
-      winningPartyColors
     );
     setProvinceColorArray(winningPartyColors);
   }, [provinceResultArray, partyArray]);
