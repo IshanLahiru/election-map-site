@@ -44,6 +44,8 @@ export const DataProvider: React.FC<{ children: ReactNode }> = ({
       provinces,
       'PRESIDENTIAL-FIRST'
     );
+    console.log(pollingData);
+    
     const loadData = (
       divisions: Division[],
       provinces: Province[],
