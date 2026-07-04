@@ -1,15 +1,15 @@
 [
   {
     "divisionId": "division-1",
-    "divisionName": "Colombo-north"
+    "divisionName": "Colombo-North"
   },
   {
     "divisionId": "division-2",
-    "divisionName": "Colombo-central"
+    "divisionName": "Colombo-Central"
   },
   {
     "divisionId": "division-3",
-    "divisionName": "Boralla"
+    "divisionName": "Borella"
   },
   {
     "divisionId": "division-4",
@@ -17,7 +17,7 @@
   },
   {
     "divisionId": "division-5",
-    "divisionName": "Colombo-central"
+    "divisionName": "Colombo-West"
   },
   {
     "divisionId": "division-6",
@@ -45,7 +45,7 @@
   },
   {
     "divisionId": "division-12",
-    "divisionName": "Homgama"
+    "divisionName": "Homagama"
   },
   {
     "divisionId": "division-13",
@@ -65,7 +65,7 @@
   },
   {
     "divisionId": "division-17",
-    "divisionName": "Negambo"
+    "divisionName": "Negombo"
   },
   {
     "divisionId": "division-18",
@@ -133,7 +133,7 @@
   },
   {
     "divisionId": "division-34",
-    "divisionName": "Kaluthara"
+    "divisionName": "Kalutara"
   },
   {
     "divisionId": "division-35",
@@ -213,7 +213,7 @@
   },
   {
     "divisionId": "division-54",
-    "divisionName": "Neliya-Maskeliya"
+    "divisionName": "NEliya-Maskeliya"
   },
   {
     "divisionId": "division-55",
@@ -253,7 +253,7 @@
   },
   {
     "divisionId": "division-64",
-    "divisionName": "Ratagama"
+    "divisionName": "Ratgama"
   },
   {
     "divisionId": "division-65",
@@ -309,7 +309,7 @@
   },
   {
     "divisionId": "division-78",
-    "divisionName": "Tissamaharamaya"
+    "divisionName": "Tissamaharama"
   },
   {
     "divisionId": "division-79",
@@ -321,7 +321,7 @@
   },
   {
     "divisionId": "division-81",
-    "divisionName": "kankasanthurai"
+    "divisionName": "Kankesanturai"
   },
   {
     "divisionId": "division-82",
@@ -417,7 +417,7 @@
   },
   {
     "divisionId": "division-105",
-    "divisionName": "Yapahwa"
+    "divisionName": "Yapahuwa"
   },
   {
     "divisionId": "division-106",
@@ -465,7 +465,7 @@
   },
   {
     "divisionId": "division-117",
-    "divisionName": "Puththalama"
+    "divisionName": "Puttalam"
   },
   {
     "divisionId": "division-118",
@@ -565,7 +565,7 @@
   },
   {
     "divisionId": "division-142",
-    "divisionName": "Monaragala"
+    "divisionName": "Moneragala"
   },
   {
     "divisionId": "division-143",
@@ -613,7 +613,7 @@
   },
   {
     "divisionId": "division-154",
-    "divisionName": "Kegalla"
+    "divisionName": "Kegalle"
   },
   {
     "divisionId": "division-155",

@@ -15,8 +15,8 @@ const App: React.FC = () => {
         <div className="main-container">
           <MapContent />
           <Sidebar />
-          <div id="bottom-section-container" className="bottom-section">
-            <BottomSection resultArray={[]} />
+          <div id="bottom-section-container">
+            <BottomSection />
           </div>
         </div>
         <Footer />

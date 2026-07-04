@@ -1,8 +1,6 @@
 import {
   ElectionResult,
   Party,
-  Division,
-  Province,
   PartyResult,
   ColorData,
 } from '../types/data-intarfaces';
@@ -14,155 +12,17 @@ export interface SampleDataPack {
   provinceResultArray: ElectionResult[];
 }
 
-interface PollingData {
-  electors: number;
-  polled: number;
-  valid: number;
-  rejected: number;
-}
+const OTHERS_CODE = 'OTH';
 
-const getRandomNumber = (min: number, max: number): number => {
-  return Math.floor(Math.random() * (max - min + 1)) + min;
-};
-
-function generateRandomVotingDataArray(length: number): PollingData[] {
-  const array: PollingData[] = [];
-
-  for (let i = 0; i < length; i++) {
-    const electors = getRandomNumber(4000, 8000);
-    const polled = getRandomNumber(Math.floor(electors * 0.8), electors);
-    const valid = getRandomNumber(Math.floor(polled * 0.9), polled);
-    const rejected = polled - valid;
-
-    const data: PollingData = {
-      electors,
-      polled,
-      valid,
-      rejected,
-    };
-
-    array.push(data);
-  }
-
-  return array;
-}
-
-const generatePartyResults = (
-  partyList: Party[],
-  totalVotes: number
-): PartyResult[] => {
-  const results: PartyResult[] = [];
-  let remainingVotes = totalVotes;
-
-  const shuffledPartyList = [...partyList].sort(() => Math.random() - 0.5);
-
-  shuffledPartyList.forEach((party, index) => {
-    const maxVotesForParty =
-      index === shuffledPartyList.length - 1
-        ? remainingVotes
-        : getRandomNumber(1, Math.floor(remainingVotes / 2));
-
-    remainingVotes -= maxVotesForParty;
-    const percentage = ((maxVotesForParty / totalVotes) * 100).toFixed(2);
-
-    results.push({
-      party_code: party.partyCode,
-      votes: maxVotesForParty,
-      percentage,
-      party_name: party.partyName,
-      candidate: party.candidate,
-    });
-  });
-
-  results.sort((a, b) => b.votes - a.votes);
-
-  return results;
-};
-
-export const getPollingData = (
-  partyList: Party[],
-  divisionArray: Division[],
-  provinceArray: Province[],
-  level: string
-): SampleDataPack => {
-  const divisionResultArray: ElectionResult[] = [];
-  const provinceResultArray: ElectionResult[] = [];
-
-  const lengthOfDivisionArray = divisionArray.length;
-  const lengthOfProvinceArray = provinceArray.length;
-
-  const randomVotingDataArrayDivision = generateRandomVotingDataArray(
-    lengthOfDivisionArray
-  );
-  const randomVotingDataArrayProvince = generateRandomVotingDataArray(
-    lengthOfProvinceArray
-  );
-
-  randomVotingDataArrayDivision.forEach((data, index) => {
-    const divisionResult: ElectionResult = {
-      timestamp: new Date().toISOString(),
-      level,
-      ed_code: divisionArray[index].divisionId,
-      ed_name: divisionArray[index].divisionName,
-      pd_code: divisionArray[index].divisionId,
-      pd_name: divisionArray[index].divisionName,
-      by_party: generatePartyResults(partyList, data.polled),
-      summary: {
-        valid: data.valid,
-        rejected: data.rejected,
-        polled: data.polled,
-        electors: data.electors,
-        percent_valid: ((data.valid / data.polled) * 100).toFixed(2),
-        percent_rejected: ((data.rejected / data.polled) * 100).toFixed(2),
-        percent_polled: ((data.polled / data.electors) * 100).toFixed(2),
-      },
-      type: 'ELECTION_TYPE',
-      sequence_number: (index + 1).toString(),
-    };
-
-    divisionResultArray.push(divisionResult);
-  });
-
-  randomVotingDataArrayProvince.forEach((data, index) => {
-    const provinceResult: ElectionResult = {
-      timestamp: new Date().toISOString(),
-      level,
-      ed_code: provinceArray[index].provinceId,
-      ed_name: provinceArray[index].provinceName,
-      pd_code: provinceArray[index].provinceId,
-      pd_name: provinceArray[index].provinceName,
-      by_party: generatePartyResults(partyList, data.polled),
-      summary: {
-        valid: data.valid,
-        rejected: data.rejected,
-        polled: data.polled,
-        electors: data.electors,
-        percent_valid: ((data.valid / data.polled) * 100).toFixed(2),
-        percent_rejected: ((data.rejected / data.polled) * 100).toFixed(2),
-        percent_polled: ((data.polled / data.electors) * 100).toFixed(2),
-      },
-      type: 'ELECTION_TYPE',
-      sequence_number: (index + 1).toString(),
-    };
-
-    provinceResultArray.push(provinceResult);
-  });
-
-
-
-  // return {
-  //   divisionResultArray,
-  //   provinceResultArray,
-  // };
-
+export const getPollingData = (): SampleDataPack => {
   return {
-    divisionResultArray: divisionElectionResults,
-    provinceResultArray: provinceElectionResults,
+    divisionResultArray: divisionElectionResults as ElectionResult[],
+    provinceResultArray: provinceElectionResults as ElectionResult[],
   };
 };
 
 export const calculateAllIslandResult = (
-  divisionResultArray: ElectionResult[],
+  provinceResultArray: ElectionResult[],
   partyList: Party[]
 ): ElectionResult => {
   let totalElectors = 0;
@@ -176,14 +36,15 @@ export const calculateAllIslandResult = (
     partyVoteMap[party.partyCode] = 0;
   });
 
-  divisionResultArray.forEach((result) => {
+  provinceResultArray.forEach((result) => {
     totalElectors += result.summary.electors;
     totalPolled += result.summary.polled;
     totalValid += result.summary.valid;
     totalRejected += result.summary.rejected;
 
     result.by_party.forEach((partyResult) => {
-      partyVoteMap[partyResult.party_code] += partyResult.votes;
+      partyVoteMap[partyResult.party_code] =
+        (partyVoteMap[partyResult.party_code] || 0) + partyResult.votes;
     });
   });
 
@@ -200,27 +61,35 @@ export const calculateAllIslandResult = (
     };
   });
 
-  allIslandPartyResults.sort((a, b) => b.votes - a.votes);
+  // The "Other Candidates" bucket is already an aggregate, not a single
+  // candidate, so it should never occupy a "leading candidates" slot -
+  // it always gets folded into the final rollup below.
+  const namedResults = allIslandPartyResults.filter(
+    (party) => party.party_code !== OTHERS_CODE
+  );
+  const othersBucket = allIslandPartyResults.find(
+    (party) => party.party_code === OTHERS_CODE
+  );
 
-  const top4Parties = allIslandPartyResults.slice(0, 4);
+  namedResults.sort((a, b) => b.votes - a.votes);
 
-  const otherParties = allIslandPartyResults.slice(4);
+  const top4Parties = namedResults.slice(0, 4);
+  const remainingParties = namedResults.slice(4);
 
-  if (otherParties.length > 0) {
-    const totalOtherVotes = otherParties.reduce(
-      (sum, party) => sum + party.votes,
-      0
-    );
-    const otherPercentage = ((totalOtherVotes / totalPolled) * 100).toFixed(2);
+  const remainingVotes =
+    remainingParties.reduce((sum, party) => sum + party.votes, 0) +
+    (othersBucket?.votes || 0);
 
-    const otherPartyResult: PartyResult = {
-      party_code: 'OTHERS',
-      votes: totalOtherVotes,
+  if (remainingVotes > 0) {
+    const otherPercentage = ((remainingVotes / totalPolled) * 100).toFixed(2);
+
+    top4Parties.push({
+      party_code: OTHERS_CODE,
+      votes: remainingVotes,
       percentage: otherPercentage,
-      party_name: 'Other Parties',
-      candidate: 'N/A',
-    };
-    top4Parties.push(otherPartyResult);
+      party_name: 'Other Candidates',
+      candidate: 'Various',
+    });
   }
 
   const allIslandResult: ElectionResult = {
@@ -240,7 +109,7 @@ export const calculateAllIslandResult = (
       percent_rejected: ((totalRejected / totalPolled) * 100).toFixed(2),
       percent_polled: ((totalPolled / totalElectors) * 100).toFixed(2),
     },
-    type: 'ELECTION_TYPE',
+    type: 'PRESIDENTIAL',
     sequence_number: '1',
   };
 

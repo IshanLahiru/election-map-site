@@ -24,8 +24,7 @@ const MapDistricts: React.FC<MapDivisionProps> = ({
       return '#ffffff';
     }
     const colorData = ar.find((color) => color.id === id);
-    console.log('Color Data:', ar, ar[1]);
-    
+
     return colorData ? colorData.color : '#ffffff';
   };
 

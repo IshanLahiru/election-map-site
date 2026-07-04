@@ -1,52 +1,29 @@
 .footer {
-  background: linear-gradient(135deg, #AD1D30 0%, #800000 100%);
+  background: var(--color-brand-gradient);
   color: #ffffff;
-  padding: 10px 0;
+  padding: 14px 20px;
   text-align: center;
   font-family: 'Roboto', sans-serif;
   position: relative;
   z-index: 100;
-  box-shadow: 0 -4px 15px rgba(0, 0, 0, 0.3);
+  box-shadow: 0 -4px 15px var(--color-shadow);
 }
 
 .footer p {
   font-size: 0.8rem;
-  letter-spacing: 1px;
+  letter-spacing: 0.5px;
+  margin: 4px 0;
+}
+
+.footer-source {
+  color: rgba(255, 255, 255, 0.8);
 }
 
 .footer a {
-  color: rgb(255, 255, 255);
-}
-
-.social-media {
-  margin-top: 10px;
-}
-
-.social-media a {
-  color: #ffeb3b;
-  margin: 0 15px;
-  font-size: 1rem;
+  color: var(--color-accent-soft);
   text-decoration: none;
-  transition: color 0.3s ease;
-  position: relative;
 }
 
-.social-media a:before {
-  content: "";
-  position: absolute;
-  width: 0;
-  height: 100%;
-  border-bottom: 2px solid #ffeb3b;
-  bottom: 0;
-  left: 0;
-  transition: width 0.3s;
-}
-
-.social-media a:hover {
-  color: #ffffff;
-  text-shadow: 0 0 8px #ffeb3b;
-}
-
-.social-media a:hover:before {
-  width: 100%;
+.footer a:hover {
+  text-decoration: underline;
 }

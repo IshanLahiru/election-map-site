@@ -1,10 +1,9 @@
 import React, { useContext, useEffect, useState } from 'react';
-import { FullData } from '../map-component/map-component';
 import './style.css';
 import ModalCard from '../cards/modal-card/modal-card';
 import { DataContext } from '../../contexts/data-context/data-context';
 import { ElectionResult, Party } from '../../contexts/data-context/types/data-intarfaces';
-import { getPartyByName } from '../../contexts/data-context/util/data-util';
+import { getPartyByCode } from '../../contexts/data-context/util/data-util';
 
 interface ModalProps {
   isVisible: boolean;
@@ -24,14 +23,7 @@ const Modal: React.FC<ModalProps> = ({ isVisible, onClose, dta, title }) => {
     provinceColorArray: [],
   };
 
-  const [allIslandResultByParty,setAllIslandResultByPArty] = useState<PartyResult[]>([]);
-  const [parties,setParties] = useState<Party[]>([]);
-
-  useEffect(() => {
-    if (dta) {
-      setAllIslandResultByPArty(dta.by_party);
-    }
-  }, [dta]);
+  const [parties, setParties] = useState<Party[]>([]);
 
   useEffect(() => {
     setParties(partyArray);
@@ -44,7 +36,7 @@ const Modal: React.FC<ModalProps> = ({ isVisible, onClose, dta, title }) => {
       <div className="modal-container">
         <div className="modal-header">
           <div>
-            <h2>{`${title} Results`}</h2>
+            <h2 className="modal-title">{`${title} Results`}</h2>
           </div>
           <button className="close-button" onClick={onClose}>
             &times;
@@ -56,18 +48,27 @@ const Modal: React.FC<ModalProps> = ({ isVisible, onClose, dta, title }) => {
               <ModalCard
               key={index}
               ob={{
-                iconUrl: `src/contexts/data-context/data/svgs/${getPartyByName(parties, party.party_name)?.image}`,
-                name: party.party_name,
+                name:
+                  party.party_code === 'OTH'
+                    ? party.party_name
+                    : party.candidate,
                 voteCount: party.votes,
                 percentage: (isNaN(+party.percentage.replace('%', '').trim()) ? 0 : +party.percentage.replace('%', '').trim()),
                 rank: index+1,
-                color: getPartyByName(parties, party.party_name)?.color || '#0000',
+                color: getPartyByCode(parties, party.party_code)?.color || '#8a8a8a',
               }}/>
             ))
           ) : (
             <p>No data available</p>
           )}
         </div>
+        <div className="modal-footer-stats">
+          <span>Valid votes: {dta.summary.valid.toLocaleString()}</span>
+          {dta.ed_code.startsWith('division-') && (
+            <span>Turnout: {dta.summary.percent_polled}%</span>
+          )}
+        </div>
+        {dta.note && <p className="modal-note">{dta.note}</p>}
       </div>
     </div>
   );

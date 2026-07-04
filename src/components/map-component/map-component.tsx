@@ -1,4 +1,4 @@
-import React, { useContext, useEffect, useState } from 'react';
+import React, { useContext, useState } from 'react';
 import './style.css';
 import MapDistricts from './maps/map-districts';
 import MapDivision from './maps/map-divisions';
@@ -10,41 +10,12 @@ import {
   Province,
 } from '../../contexts/data-context/types/data-intarfaces';
 
-interface PartyData {
-  party_name: string;
-  votes: number;
-  percentage: number;
-  seats?: number;
-}
-
-export interface FullData {
-  island_wide: PartyData[];
-  division_wide: PartyData[];
-}
-
-// Sample data for both island-wide and division-wide results
-const sampleData: FullData = {
-  island_wide: [
-    { party_name: 'Party Aakdsfklasdj', votes: 1500, percentage: 45, seats: 3 },
-    { party_name: 'Party B', votes: 1000, percentage: 30, seats: 2 },
-    { party_name: 'Party C', votes: 500, percentage: 15, seats: 1 },
-    { party_name: 'Party D', votes: 300, percentage: 10, seats: 1 },
-  ],
-  division_wide: [
-    { party_name: 'Party X', votes: 100, percentage: 35, seats: 1 },
-    { party_name: 'Party Y', votes: 80, percentage: 28, seats: 0 },
-    { party_name: 'Party Z', votes: 60, percentage: 22, seats: 0 },
-    { party_name: 'Party W', votes: 40, percentage: 15, seats: 0 },
-  ],
-};
-
 const MapContent: React.FC = () => {
   const [districtsDivisionToggler, setDistrictsDivisionToggler] =
     useState(true);
   const {
     divisionArray,
     provinceArray,
-    partyArray,
     divisionColorArray,
     provinceColorArray,
     divisionResultArray,
@@ -162,7 +133,7 @@ const MapContent: React.FC = () => {
       );
 
       if (matched) {
-        setModalTitle(`${matched.provinceName} Province`);
+        setModalTitle(`${matched.provinceName} District`);
         if (provinceResultArray){
           const result = getPartyResultByPartyCode(provinceResultArray, matched.provinceId);
           setResult(result);

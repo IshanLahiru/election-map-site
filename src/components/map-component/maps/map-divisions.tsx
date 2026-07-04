@@ -20,7 +20,7 @@ const MapDivision: React.FC<MapDivisionProps> = ({
     setColorsArray(colors);
   }, [colors]);
 
-  const getColorById = (id: string, ar: ColorData[] | undefined): string => {
+  const getColorById = (id: string, _ar: ColorData[] | undefined): string => {
     if (!colorsArray) {
       return '#ffffff';
     }
@@ -28,7 +28,7 @@ const MapDivision: React.FC<MapDivisionProps> = ({
     return colorData ? colorData.color : '#ffffff';
   };
 
-  const getStrokeById = (id: string, ar: ColorData[] | undefined): string => {
+  const getStrokeById = (id: string, _ar: ColorData[] | undefined): string => {
     if (!colorsArray) {
       return '#000000';
     }

@@ -14,7 +14,6 @@ import {
   calculateAllIslandResult,
   getPollingData,
   getWinningPartyColors,
-  SampleDataPack,
 } from './data/dataHelper';
 
 export const DataContext = createContext<DataContextType | undefined>(
@@ -38,30 +37,13 @@ export const DataProvider: React.FC<{ children: ReactNode }> = ({
   const [provinceColorArray, setProvinceColorArray] = useState<ColorData[]>([]);
 
   useEffect(() => {
-    const pollingData: SampleDataPack = getPollingData(
-      parties,
-      divisions,
-      provinces,
-      'PRESIDENTIAL-FIRST'
-    );
-    console.log(pollingData);
-    
-    const loadData = (
-      divisions: Division[],
-      provinces: Province[],
-      parties: Party[],
-      pollingData: SampleDataPack
-    ) => {
-      setDivisionArray(divisions);
-      setProvinceArray(provinces);
-      setPartyArray(parties);
-      setProvinceResultArray(pollingData.provinceResultArray);
-      setDivisionResultArray(pollingData.divisionResultArray);
-      // setProvinceResultArray(divisionElectionResults);
-      // setDivisionResultArray(provinceElectionResults);
-    };
+    const pollingData = getPollingData();
 
-    loadData(divisions, provinces, parties, pollingData);
+    setDivisionArray(divisions);
+    setProvinceArray(provinces);
+    setPartyArray(parties);
+    setProvinceResultArray(pollingData.provinceResultArray);
+    setDivisionResultArray(pollingData.divisionResultArray);
   }, []);
 
   useEffect(() => {

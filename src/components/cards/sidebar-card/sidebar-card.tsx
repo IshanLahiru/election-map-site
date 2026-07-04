@@ -1,9 +1,9 @@
 import React from 'react';
 import './style.css';
+import { getInitials } from '../../../contexts/data-context/util/data-util';
 
 interface SidebarCardProps {
   ob: {
-    iconUrl: string;
     name: string;
     voteCount: number;
     percentage: number;
@@ -15,8 +15,8 @@ interface SidebarCardProps {
 const SidebarCard: React.FC<SidebarCardProps> = ({ ob }) => {
   return (
     <div className="card futuristic-card">
-      <div className="party-logo">
-        <img src={ob.iconUrl} alt={`1`} style={{backgroundColor: `${ob.color}` }} />
+      <div className="party-logo" style={{ backgroundColor: ob.color }}>
+        {getInitials(ob.name)}
       </div>
       <div className="dtlSection">
         <div className='party-name'>{ob.name}</div>

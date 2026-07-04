@@ -12,7 +12,6 @@ export interface Party {
   partyCode: string;
   partyName: string;
   candidate: string;
-  image: string;
   symbol: string;
   color: string;
 }
@@ -57,6 +56,7 @@ export interface ElectionResult {
   summary: Summary;
   type: string;
   sequence_number: string;
+  note?: string;
 }
 
 export interface ColorData {
